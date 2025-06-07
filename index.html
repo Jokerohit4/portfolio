@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    Fore more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+  -->
+  <base href="/RohitashwaPortfolio/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A Beautifully engineered portfolio website built with flutter.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="RohitashwaPortfolio">
+  <link rel="apple-touch-icon" href="icons/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="icons/logo.png"/>
+
+  <title>Rohitashwa's Portfolio</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+<!-- Custom loading placeholder -->
+<div id="loading">
+  <div style="display: flex; align-items: center; justify-content: center; height: 100vh; flex-direction: column;">
+    <img src="icons/logo.png" width="80" height="80" alt="logo" />
+    <p style="color: #666; font-family: sans-serif; font-size: 16px; margin-top: 16px;">Warming up Portfolio...</p>
+  </div>
+</div>
+
+<!-- This script installs service_worker.js -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('flutter-first-frame', function () {
+      navigator.serviceWorker.register('flutter_service_worker.js?v=56635390');
+    });
+  }
+
+  // Remove placeholder once Flutter boots
+  window.addEventListener("load", function () {
+    const loadingScreen = document.getElementById("loading");
+    if (loadingScreen) loadingScreen.remove();
+  });
+</script>
+
+<script src="main.dart.js" type="application/javascript"></script>
+</body>
+</html>
