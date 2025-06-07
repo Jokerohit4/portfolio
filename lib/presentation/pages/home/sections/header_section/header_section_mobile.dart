@@ -223,8 +223,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                   height: buttonHeight,
                                   buttonTitle: StringConst.DOWNLOAD_CV,
                                   onPressed: () {
-                                    launchUrl(Uri.parse(
-                                        "https://drive.google.com/file/d/18L3Uhh9sSdVIeOHFfJpjOyOsIfZ8ahMK/view?usp=sharing"));
+                                    launchUrl(Uri.parse(StringConst.CV_LINK));
                                   },
                                 ),
                                 SpaceW16(),

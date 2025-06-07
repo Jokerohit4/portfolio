@@ -280,4 +280,6 @@ class StringConst {
   static const String DAVID_LEGEND_URL = "https://davidcobbina.com/#/";
   static const String DESIGN_URL =
       "https://www.behance.net/gallery/95351691/Resume-Design-03";
+  static const String CV_LINK =
+      "https://drive.google.com/file/d/18L3Uhh9sSdVIeOHFfJpjOyOsIfZ8ahMK/view?usp=drive_link";
 }

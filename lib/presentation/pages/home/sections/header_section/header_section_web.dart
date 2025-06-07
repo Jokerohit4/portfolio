@@ -253,8 +253,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   buttonTitle: StringConst.DOWNLOAD_CV,
                                   buttonColor: AppColors.primaryColor,
                                   onPressed: () {
-                                    launchUrl(Uri.parse(
-                                        "https://docs.google.com/document/d/1j45Bcc5UddDSj_RF8kI8a7_1MvzKqyfYp84Kjt137ag/edit?tab=t.0"));
+                                    launchUrl(Uri.parse(StringConst.CV_LINK));
                                   },
                                 ),
                                 SpaceW16(),
