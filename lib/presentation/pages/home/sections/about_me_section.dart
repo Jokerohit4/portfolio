@@ -4,7 +4,6 @@ import 'package:nimbus/presentation/widgets/buttons/social_button_2.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
 import 'package:nimbus/presentation/widgets/empty.dart';
 import 'package:nimbus/presentation/widgets/nimbus_info_section.dart';
-import 'package:nimbus/presentation/widgets/nimbus_link.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
@@ -146,23 +145,11 @@ class _AboutMeSectionState extends State<AboutMeSection>
           width: width,
           title: data[index].title.toUpperCase(),
           iconData: data[index].iconData,
-          onPressed: () => openUrlLink(data[index].url),
+          onPressed: () => openUrlLink(data[index].url, context),
           titleColor: data[index].titleColor,
           buttonColor: data[index].buttonColor,
           iconColor: data[index].iconColor,
         ),
-        // NimBusLink(
-        //   url: data[index].url,
-        //   child: SocialButton2(
-        //     width: width,
-        //     title: data[index].title.toUpperCase(),
-        //     iconData: data[index].iconData,
-        //     onPressed: () {},
-        //     titleColor: data[index].titleColor,
-        //     buttonColor: data[index].buttonColor,
-        //     iconColor: data[index].iconColor,
-        //   ),
-        // ),
       );
     }
     return items;
@@ -171,7 +158,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
   Widget _buildImage({required double width, required double height}) {
     TextTheme textTheme = Theme.of(context).textTheme;
     double fontSize = responsiveSize(context, 60, 72, md: 64);
-    TextStyle? titleStyle = textTheme.bodyText1?.merge(
+    TextStyle? titleStyle = textTheme.bodyLarge?.merge(
       Styles.customTextStyle3(fontSize: fontSize, height: 1.25),
     );
 
@@ -221,7 +208,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
         ),
         Positioned(
           top: width * 0.2,
-          left: width * 0.2,
+          left: width * 0.63,
           child: FadeTransition(
             opacity: _fadeInAnimation,
             child: Column(
@@ -249,8 +236,6 @@ class _AboutMeSectionState extends State<AboutMeSection>
   }) {
     return Stack(
       children: [
-        //positions blob on the far right of the section
-        //based on the calculation only 10% of blob is showing
         Positioned(
           top: height * 0.2,
           left: width * 0.90,
@@ -270,7 +255,6 @@ class _AboutMeSectionState extends State<AboutMeSection>
             },
           ),
         ),
-
         ResponsiveBuilder(
           refinedBreakpoints: RefinedBreakpoints(),
           builder: (context, sizingInformation) {
@@ -302,7 +286,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
             children: [
               NimbusInfoSection1(
                 sectionTitle: StringConst.ABOUT_ME,
-                title1: StringConst.CREATIVE_DESIGN,
+                title1: StringConst.STARTUP,
                 title2: StringConst.HELP,
                 body: StringConst.ABOUT_ME_DESC,
                 child: Column(
@@ -310,7 +294,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
                   children: [
                     Text(
                       StringConst.FOLLOW_ME_1,
-                      style: textTheme.headline6?.copyWith(
+                      style: textTheme.titleSmall?.copyWith(
                         color: AppColors.black,
                       ),
                     ),
@@ -336,7 +320,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
     TextTheme textTheme = Theme.of(context).textTheme;
     return NimbusInfoSection2(
       sectionTitle: StringConst.ABOUT_ME,
-      title1: StringConst.CREATIVE_DESIGN,
+      title1: StringConst.STARTUP,
       title2: StringConst.HELP,
       body: StringConst.ABOUT_ME_DESC,
       child: Column(
@@ -344,7 +328,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
         children: [
           Text(
             StringConst.FOLLOW_ME_1,
-            style: textTheme.headline6?.copyWith(color: AppColors.black),
+            style: textTheme.titleSmall?.copyWith(color: AppColors.black),
           ),
           SpaceH16(),
           Wrap(

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
-import 'package:nimbus/presentation/routes/router.gr.dart';
+import 'package:nimbus/presentation/routes/router.dart';
 import 'package:nimbus/values/values.dart';
 
 import 'app_theme.dart';
 
 void main() {
-  runApp(Nimbus());
+  runApp(RohitashwaPortfolio());
 }
 
-class Nimbus extends StatelessWidget {
+class RohitashwaPortfolio extends StatelessWidget {
   final _appRouter = AppRouter();
- 
+
   @override
   Widget build(BuildContext context) {
     return Layout(
@@ -351,7 +351,7 @@ class Nimbus extends StatelessWidget {
 //      alignment: Alignment.center,
 //      child: FittedBox(
 //        fit: BoxFit.scaleDown,
-//        child: Text(_cellName, style: Theme.of(context).textTheme.headline4),
+//        child: Text(_cellName, style: Theme.of(context).textTheme.titleLarge),
 //      ),
 //    );
 //
@@ -382,7 +382,7 @@ class Nimbus extends StatelessWidget {
 //  @override
 //  Widget build(BuildContext context) {
 //    final headingTextStyle =
-//        Theme.of(context).textTheme.headline6!.copyWith(color: Colors.white);
+//        Theme.of(context).textTheme.titleSmall!.copyWith(color: Colors.white);
 //
 //    final heading = Container(
 //      padding: const EdgeInsets.all(_reportPadding),

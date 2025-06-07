@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.17.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -28,25 +28,24 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  google_fonts: ^2.1.0
-  auto_route: ^3.2.2
-  responsive_builder: ^0.4.1
-  auto_route_generator: ^3.2.1
+  google_fonts: ^6.2.1
+  auto_route: ^8.0.0
+  responsive_builder: ^0.7.1
   feather_icons: ^1.1.0-nullsafety.0
-  font_awesome_flutter: ^9.0.0-nullsafety
-  flutter_staggered_grid_view: ^0.4.0
-  url_launcher: ^6.0.3
-  layout: ^0.6.2
-  carousel_slider: ^4.0.0
-  dots_indicator: ^2.0.0
+  font_awesome_flutter: ^10.8.0
+  flutter_staggered_grid_view: ^0.7.0
+  url_launcher: ^6.1.14
+  layout: ^1.0.5
+  carousel_slider: ^5.0.0
+  dots_indicator: ^4.0.1
   animated_text_kit: ^4.2.1
-  visibility_detector: ^0.2.2
+  visibility_detector: ^0.4.0+2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  build_runner:
+  auto_route_generator: ^8.0.0
+  build_runner: any
   # auto_route_generator: ^2.1.0
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -62,6 +61,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/screenshots/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

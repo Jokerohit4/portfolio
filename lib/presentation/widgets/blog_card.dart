@@ -86,7 +86,6 @@ class _BlogCardState extends State<BlogCard> {
             children: [
               Container(
                 margin: const EdgeInsets.only(left: Sizes.MARGIN_16),
-                
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(
                     Radius.circular(Sizes.RADIUS_16),
@@ -133,7 +132,7 @@ class _BlogCardState extends State<BlogCard> {
                 child: Text(
                   widget.category,
                   style: widget.categoryStyle ??
-                      textTheme.subtitle1?.copyWith(
+                      textTheme.labelLarge?.copyWith(
                         fontSize: Sizes.TEXT_SIZE_15,
                         color: AppColors.white,
                       ),
@@ -157,14 +156,14 @@ class _BlogCardState extends State<BlogCard> {
                     SpaceW8(),
                     Text(
                       widget.date,
-                      style: widget.dateStyle ?? textTheme.subtitle2,
+                      style: widget.dateStyle ?? textTheme.labelMedium,
                     )
                   ],
                 ),
                 SpaceH8(),
                 AnimatedLineThrough(
                   text: widget.title,
-                  textStyle: widget.titleStyle ?? textTheme.headline5,
+                  textStyle: widget.titleStyle ?? textTheme.titleMedium,
                 ),
                 SpaceH16(),
                 AnimatedNimbusButton(

@@ -31,7 +31,7 @@ class NimBusButtonLink extends StatelessWidget {
       uri: Uri.parse(url),
       target: linkTarget,
       builder: (context, followLink) {
-        return NimbusButton(
+        return CvButton(
           width: width,
           height: height,
           buttonTitle: buttonTitle,

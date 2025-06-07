@@ -53,7 +53,7 @@ class _AppDrawerState extends State<AppDrawer> {
                   InkWell(
                     onTap: () {},
                     child: Image.asset(
-                      ImagePath.LOGO_LIGHT,
+                      ImagePath.LOGO,
                       height: Sizes.HEIGHT_52,
                     ),
                   ),
@@ -98,7 +98,7 @@ class _AppDrawerState extends State<AppDrawer> {
           title: menuList[i].name,
           isMobile: true,
           isSelected: menuList[i].isSelected,
-          titleStyle: textTheme.bodyText1?.copyWith(
+          titleStyle: textTheme.bodyLarge?.copyWith(
             color:
                 menuList[i].isSelected ? AppColors.primary200 : AppColors.white,
             fontSize: Sizes.TEXT_SIZE_16,
@@ -130,12 +130,12 @@ class _AppDrawerState extends State<AppDrawer> {
   }
 
   _closeDrawer() {
-    context.router.pop();
+    context.router.maybePop();
   }
 
   Widget _buildFooterText() {
     TextTheme textTheme = Theme.of(context).textTheme;
-    TextStyle? footerTextStyle = textTheme.caption?.copyWith(
+    TextStyle? footerTextStyle = textTheme.labelSmall?.copyWith(
       color: AppColors.primaryText2,
       fontWeight: FontWeight.bold,
     );
@@ -171,7 +171,7 @@ class _AppDrawerState extends State<AppDrawer> {
                 style: footerTextStyle,
                 children: [
                   TextSpan(
-                    text: StringConst.DAVID_COBBINA + ". ",
+                    text: StringConst.ROHITASHWA_SINGH + ". ",
                     style: footerTextStyle?.copyWith(
                       decoration: TextDecoration.underline,
                       fontWeight: FontWeight.w900,
@@ -187,12 +187,12 @@ class _AppDrawerState extends State<AppDrawer> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(StringConst.MADE_IN_GHANA, style: footerTextStyle),
+            Text(StringConst.MADE_IN_INDIA, style: footerTextStyle),
             SpaceW4(),
             ClipRRect(
               borderRadius: BorderRadius.all(const Radius.circular(20)),
               child: Image.asset(
-                ImagePath.GHANA_FLAG,
+                ImagePath.FLAG,
                 width: Sizes.WIDTH_16,
                 height: Sizes.HEIGHT_16,
                 fit: BoxFit.cover,

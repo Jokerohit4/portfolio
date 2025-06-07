@@ -3,8 +3,8 @@ import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:url_launcher/link.dart';
 
-class NimbusButton extends StatelessWidget {
-  NimbusButton({
+class CvButton extends StatelessWidget {
+  CvButton({
     required this.buttonTitle,
     this.width = Sizes.WIDTH_150,
     this.height = Sizes.HEIGHT_60,
@@ -37,7 +37,7 @@ class NimbusButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: borderRadius,
+      borderRadius: BorderRadiusGeometry.lerp(borderRadius, borderRadius, 0)!,
       child: MaterialButton(
         minWidth: width,
         height: height,
@@ -71,7 +71,7 @@ class NimbusButton extends StatelessWidget {
               child: Text(
                 buttonTitle,
                 style: titleStyle ??
-                    textTheme.button?.copyWith(
+                    textTheme.labelMedium?.copyWith(
                       color: titleColor,
                       fontSize: textSize,
                       letterSpacing: 1.1,
@@ -86,7 +86,7 @@ class NimbusButton extends StatelessWidget {
       return Text(
         buttonTitle,
         style: titleStyle ??
-            textTheme.button?.copyWith(
+            textTheme.labelMedium?.copyWith(
               color: titleColor,
               fontSize: textSize,
               letterSpacing: 1.1,

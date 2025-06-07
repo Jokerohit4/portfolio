@@ -8,7 +8,6 @@ import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-
 class BrandSection extends StatelessWidget {
   BrandSection({Key? key});
   CarouselOptions carouselOptions({
@@ -42,7 +41,7 @@ class BrandSection extends StatelessWidget {
           Text(
             StringConst.BRANDS_SECTION_TITLE,
             textAlign: TextAlign.center,
-            style: textTheme.headline4,
+            style: textTheme.titleLarge,
           ),
           SpaceH40(),
           ResponsiveBuilder(
@@ -117,7 +116,7 @@ class BrandSection extends StatelessWidget {
           SpaceH40(),
           Align(
             alignment: Alignment.center,
-            child: NimbusButton(
+            child: CvButton(
               buttonTitle: StringConst.HIRE_ME,
               buttonColor: AppColors.primaryColor,
               onPressed: () {},

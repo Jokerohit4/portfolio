@@ -5,7 +5,6 @@ import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-
 class StatItemData {
   final int value;
   final String subtitle;
@@ -204,7 +203,7 @@ class StatItem extends StatelessWidget {
         Text(
           "$value",
           style: titleStyle ??
-              textTheme.headline3?.copyWith(
+              textTheme.displaySmall?.copyWith(
                 color: titleColor,
               ),
         ),
@@ -212,7 +211,7 @@ class StatItem extends StatelessWidget {
         Text(
           subtitle,
           style: subtitleStyle ??
-              textTheme.bodyText1?.copyWith(
+              textTheme.bodyLarge?.copyWith(
                 color: subtitleColor,
                 fontSize: 16,
               ),

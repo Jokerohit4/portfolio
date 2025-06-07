@@ -22,7 +22,7 @@ class BlogSection extends StatefulWidget {
 class _BlogSectionState extends State<BlogSection> {
   final int blogLength = Data.blogData.length;
   double currentPageIndex = 1;
-  CarouselController _carouselController = CarouselController();
+  CarouselSliderController _carouselController = CarouselSliderController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class _BlogSectionState extends State<BlogSection> {
           right: 0,
           child: SelectableText(
             StringConst.BLOGGING,
-            style: textTheme.headline1?.copyWith(
+            style: textTheme.displayLarge?.copyWith(
               color: AppColors.grey50,
               fontSize: headerIntroTextSize * 2,
             ),
@@ -74,7 +74,7 @@ class _BlogSectionState extends State<BlogSection> {
                       SpaceH50(),
                       Align(
                         alignment: Alignment.bottomRight,
-                        child: NimbusButton(
+                        child: CvButton(
                           buttonTitle: StringConst.BLOG_VIEW_ALL,
                           buttonColor: AppColors.primaryColor,
                           onPressed: () {},
@@ -99,7 +99,7 @@ class _BlogSectionState extends State<BlogSection> {
                         ),
                       ),
                       Spacer(),
-                      NimbusButton(
+                      CvButton(
                         buttonTitle: StringConst.BLOG_VIEW_ALL,
                         buttonColor: AppColors.primaryColor,
                         onPressed: () {},

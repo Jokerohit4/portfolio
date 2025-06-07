@@ -1,3 +1,4 @@
+
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
@@ -36,7 +37,7 @@ class NavSectionMobile extends StatelessWidget {
           InkWell(
             onTap: () {},
             child: Image.asset(
-              ImagePath.LOGO_LIGHT,
+              ImagePath.LOGO,
               height: Sizes.HEIGHT_52,
             ),
           ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
+import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
-
-import 'animated_indicator.dart';
 
 class ProjectData {
   final String projectCoverUrl;
@@ -12,6 +12,7 @@ class ProjectData {
   final double height;
   final double mobileWidth;
   final double mobileHeight;
+  final String link;
 
   ProjectData({
     required this.projectCoverUrl,
@@ -21,6 +22,7 @@ class ProjectData {
     this.mobileHeight = 0.5,
     this.mobileWidth = 1.0,
     this.height = 0.4,
+    required this.link,
   });
 }
 
@@ -37,6 +39,7 @@ class ProjectItem extends StatefulWidget {
     this.subtitleStyle,
     this.textColor = AppColors.white,
     this.bannerColor,
+    required this.link,
   }) : super(key: key);
 
   final String title;
@@ -49,6 +52,7 @@ class ProjectItem extends StatefulWidget {
   final double width;
   final double height;
   final double? bannerHeight;
+  final String link;
 
   @override
   _ProjectItemState createState() => _ProjectItemState();
@@ -110,36 +114,40 @@ class _ProjectItemState extends State<ProjectItem>
     return MouseRegion(
       onEnter: (e) => _mouseEnter(true),
       onExit: (e) => _mouseEnter(false),
-      child: Container(
-        child: Stack(
-          children: [
-            Image.asset(
-              widget.imageUrl,
-              width: widget.width,
-              height: widget.height,
-              fit: BoxFit.fill,
-            ),
-            Positioned(
-              bottom: 0,
-              child: FadeTransition(
-                opacity: _fadeInAnimation,
-                child: SlideTransition(
-                  position: _slideAnimation,
-                  child: ProjectCover(
-                    animation: _indicatorAnimation,
-                    color: widget.bannerColor ?? Colors.black.withOpacity(0.8),
-                    width: widget.width,
-                    height: widget.bannerHeight ?? widget.height / 3,
-                    title: widget.title,
-                    subtitle: widget.subtitle,
-                    titleStyle: widget.titleStyle,
-                    subtitleStyle: widget.subtitleStyle,
-                    isHover: _hovering,
+      child: GestureDetector(
+        onTap: () => openUrlLink(widget.link, context),
+        child: Container(
+          child: Stack(
+            children: [
+              Image.asset(
+                widget.imageUrl,
+                width: widthOfScreen(context) / 9.5,
+                height: widget.height,
+                fit: BoxFit.fill,
+              ),
+              Positioned(
+                bottom: 0,
+                child: FadeTransition(
+                  opacity: _fadeInAnimation,
+                  child: SlideTransition(
+                    position: _slideAnimation,
+                    child: ProjectCover(
+                      animation: _indicatorAnimation,
+                      color:
+                          widget.bannerColor ?? Colors.black.withOpacity(0.8),
+                      width: widthOfScreen(context) / 9.5,
+                      height: widget.bannerHeight ?? widget.height / 3,
+                      title: widget.title,
+                      subtitle: widget.subtitle,
+                      titleStyle: widget.titleStyle,
+                      subtitleStyle: widget.subtitleStyle,
+                      isHover: _hovering,
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -190,39 +198,30 @@ class ProjectCover extends StatelessWidget {
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
     return Container(
-      width: width,
+      width: widthOfScreen(context) / 9.5,
       height: height,
       color: color ?? Colors.black.withOpacity(0.8),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AnimatedHoverIndicator2(
-            animation: animation,
-            indicatorColor: indicatorColor,
+          Text(
+            title,
+            style: titleStyle ??
+                textTheme.bodySmall?.copyWith(
+                  color: AppColors.white,
+                ),
           ),
-          SpaceW16(),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: titleStyle ??
-                    textTheme.headline6?.copyWith(
-                      color: AppColors.white,
-                    ),
-              ),
-              SpaceH8(),
-              Text(
-                subtitle,
-                style: subtitleStyle ??
-                    textTheme.subtitle2?.copyWith(
-                      color: AppColors.white,
-                      fontSize: Sizes.TEXT_SIZE_16,
-                    ),
-              ),
-            ],
-          )
+          SpaceH8(),
+          Text(
+            subtitle,
+            style: subtitleStyle ??
+                textTheme.labelMedium?.copyWith(
+                  color: AppColors.white,
+                  fontSize: Sizes.TEXT_SIZE_16,
+                ),
+          ),
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NimBusLink extends StatelessWidget {
   const NimBusLink({
@@ -22,7 +23,7 @@ class NimBusLink extends StatelessWidget {
       target: linkTarget,
       builder: (context, followLink) {
         return InkWell(
-          onTap: () => followLink,
+          onTap: () => launchUrl(Uri.parse(url)),
           child: child,
         );
       },

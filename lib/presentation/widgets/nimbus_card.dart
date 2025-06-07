@@ -146,9 +146,10 @@ class _NimBusCardState extends State<NimBusCard>
                     Spacer(),
                   ],
                 ),
-                widget.trailing != null ? Spacer() : Empty(),
-                widget.trailing ?? Empty(),
-                widget.trailing != null ? Spacer() : Empty(),
+                Spacer(),
+                // widget.trailing != null ? Spacer() : Empty(),
+                // widget.trailing ?? Empty(),
+                // widget.trailing != null ? Spacer() : Empty(),///TODO : COMMENT
               ],
             ),
           ),

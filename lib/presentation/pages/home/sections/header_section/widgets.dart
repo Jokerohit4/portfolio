@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/nimbus_link.dart';
 import 'package:nimbus/presentation/widgets/buttons/social_button.dart';
 import 'package:nimbus/presentation/widgets/circular_container.dart';
 import 'package:nimbus/presentation/widgets/nimbus_card.dart';
+import 'package:nimbus/presentation/widgets/nimbus_link.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
 
@@ -134,7 +134,7 @@ List<Widget> buildCardRow({
         title: Flexible(
           child: SelectableText(
             data[index].title,
-            style: textTheme.subtitle1?.copyWith(
+            style: textTheme.labelLarge?.copyWith(
               fontSize: responsiveSize(
                 context,
                 Sizes.TEXT_SIZE_16,
@@ -146,7 +146,7 @@ List<Widget> buildCardRow({
         subtitle: Flexible(
           child: SelectableText(
             data[index].subtitle,
-            style: textTheme.bodyText1?.copyWith(
+            style: textTheme.bodyLarge?.copyWith(
                 fontSize: responsiveSize(
               context,
               Sizes.TEXT_SIZE_14,

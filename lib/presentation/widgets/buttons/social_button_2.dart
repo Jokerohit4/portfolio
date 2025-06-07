@@ -86,11 +86,12 @@ class _SocialButton2State extends State<SocialButton2>
     ).animate(controller);
   }
 
-@override
+  @override
   void dispose() {
     controller.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
@@ -126,9 +127,9 @@ class _SocialButton2State extends State<SocialButton2>
             Text(
               widget.title,
               style: widget.titleStyle ??
-                  textTheme.subtitle2?.copyWith(
+                  textTheme.labelMedium?.copyWith(
                     fontSize: Sizes.TEXT_SIZE_13,
-                    color:  animation.value,
+                    color: animation.value,
                   ),
             ),
           ],

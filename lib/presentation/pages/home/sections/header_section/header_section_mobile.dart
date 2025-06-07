@@ -4,9 +4,9 @@ import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/pages/home/sections/header_section/widgets.dart';
 import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 const double bodyTextSizeLg = 16.0;
 const double bodyTextSizeSm = 14.0;
@@ -54,9 +54,9 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
     double screenWidth = widthOfScreen(context) - (sidePadding * 2);
     double contentAreaWidth = screenWidth;
     TextStyle? bodyTextStyle =
-        textTheme.bodyText1?.copyWith(fontSize: bodyTextSizeSm);
+        textTheme.bodyLarge?.copyWith(fontSize: bodyTextSizeSm);
     TextStyle? socialTitleStyle =
-        textTheme.subtitle1?.copyWith(fontSize: socialTextSizeSm);
+        textTheme.labelLarge?.copyWith(fontSize: socialTextSizeSm);
 
     double buttonWidth = 80;
     double buttonHeight = 48;
@@ -77,15 +77,6 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
               children: [
                 Stack(
                   children: [
-                    // Positioned(
-                    //   left: -(sizeOfBlobSm * 0.7),
-                    //   top: blobOffset,
-                    //   child: Image.asset(
-                    //     ImagePath.BLOB_BLACK,
-                    //     height: sizeOfBlobSm,
-                    //     width: sizeOfBlobSm,
-                    //   ),
-                    // ),
                     Positioned(
                       left: -(sizeOfGoldenGlobe / 3),
                       top: blobOffset + dottedGoldenGlobeOffset,
@@ -120,7 +111,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                     margin: EdgeInsets.only(top: heightOfStack * 0.1),
                     child: SelectableText(
                       StringConst.FIRST_NAME,
-                      style: textTheme.headline1?.copyWith(
+                      style: textTheme.displayLarge?.copyWith(
                         color: AppColors.grey50,
                         fontSize: headerIntroTextSize * 2.5,
                       ),
@@ -145,7 +136,8 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                   TypewriterAnimatedText(
                                     StringConst.INTRO,
                                     speed: Duration(milliseconds: 60),
-                                    textStyle: textTheme.headline2?.copyWith(
+                                    textStyle:
+                                        textTheme.displayMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
                                     ),
                                   ),
@@ -163,7 +155,8 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                   TypewriterAnimatedText(
                                     StringConst.POSITION,
                                     speed: Duration(milliseconds: 80),
-                                    textStyle: textTheme.headline2?.copyWith(
+                                    textStyle:
+                                        textTheme.displayMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
                                       color: AppColors.primaryColor,
                                       height: 1.2,
@@ -210,12 +203,12 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     SelectableText(
-                                      "${StringConst.BEHANCE}:",
+                                      "${StringConst.PHONE_NUMBER}:",
                                       style: socialTitleStyle,
                                     ),
                                     SpaceH8(),
                                     SelectableText(
-                                      "${StringConst.BEHANCE_ID}",
+                                      "${StringConst.PHONE_ME}",
                                       style: bodyTextStyle,
                                     ),
                                   ],
@@ -225,26 +218,22 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                             SpaceH40(),
                             Row(
                               children: [
-                                NimbusButton(
+                                CvButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
                                   buttonTitle: StringConst.DOWNLOAD_CV,
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    launchUrl(Uri.parse(
+                                        "https://drive.google.com/file/d/18L3Uhh9sSdVIeOHFfJpjOyOsIfZ8ahMK/view?usp=sharing"));
+                                  },
                                 ),
                                 SpaceW16(),
-                                NimbusButton(
+                                CvButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
                                   buttonTitle: StringConst.HIRE_ME_NOW,
                                   onPressed: () {},
                                 ),
-                                // NimBusButtonLink(
-                                //   width: buttonWidth,
-                                //   height: buttonHeight,
-                                //   url: StringConst.EMAIL_URL,
-                                //   buttonColor: AppColors.primaryColor,
-                                //   buttonTitle: StringConst.HIRE_ME_NOW,
-                                // ),
                               ],
                             ),
                             SpaceH30(),

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
@@ -72,7 +71,7 @@ class _SkillLevelState extends State<SkillLevel> {
 
   Widget _buildChild(double level) {
     TextTheme textTheme = Theme.of(context).textTheme;
-    TextStyle? defaultStyle = textTheme.subtitle2;
+    TextStyle? defaultStyle = textTheme.labelMedium;
     return Container(
       width: widget.skillLevelWidth,
       child: Column(

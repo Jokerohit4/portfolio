@@ -94,8 +94,10 @@ class _AnimatedNimbusButtonState extends State<AnimatedNimbusButton> {
                         child: Text(
                           widget.title,
                           style: widget.titleStyle ??
-                              textTheme.button?.copyWith(
-                                color:_isHovering ? widget.titleColor : Colors.transparent,
+                              textTheme.labelMedium?.copyWith(
+                                color: _isHovering
+                                    ? widget.titleColor
+                                    : Colors.transparent,
                                 fontSize: Sizes.TEXT_SIZE_14,
                               ),
                         ),

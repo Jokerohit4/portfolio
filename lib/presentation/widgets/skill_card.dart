@@ -8,7 +8,8 @@ class SkillCardData {
   final String description;
   final IconData iconData;
 
-  SkillCardData({required this.title, required this.iconData,required this.description});
+  SkillCardData(
+      {required this.title, required this.iconData, required this.description});
 }
 
 class SkillCard extends StatefulWidget {
@@ -51,7 +52,6 @@ class SkillCard extends StatefulWidget {
 }
 
 class _SkillCardState extends State<SkillCard> {
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -88,7 +88,7 @@ class _SkillCardState extends State<SkillCard> {
                 SelectableText(
                   widget.title,
                   textAlign: TextAlign.center,
-                  style: widget.titleStyle ?? textTheme.subtitle1,
+                  style: widget.titleStyle ?? textTheme.labelLarge,
                 ),
               ],
             ),
@@ -120,7 +120,7 @@ class _SkillCardState extends State<SkillCard> {
                   Text(
                     widget.title,
                     style: widget.titleStyle ??
-                        textTheme.subtitle1?.copyWith(
+                        textTheme.labelLarge?.copyWith(
                           color: AppColors.white,
                         ),
                   ),
@@ -128,7 +128,7 @@ class _SkillCardState extends State<SkillCard> {
                   Text(
                     widget.description,
                     style: widget.descriptionStyle ??
-                        textTheme.bodyText2?.copyWith(
+                        textTheme.bodyMedium?.copyWith(
                           color: AppColors.primaryText1,
                         ),
                   ),

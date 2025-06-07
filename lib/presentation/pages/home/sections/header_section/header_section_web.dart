@@ -4,11 +4,11 @@ import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/pages/home/sections/header_section/widgets.dart';
 import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 const double bodyTextSizeLg = 16.0;
 const double bodyTextSizeSm = 14.0;
@@ -63,9 +63,9 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
     double screenWidth = widthOfScreen(context);
     double contentAreaWidth = screenWidth;
     TextStyle? bodyTextStyle =
-        textTheme.bodyText1?.copyWith(fontSize: bodyTextSize);
+        textTheme.bodyLarge?.copyWith(fontSize: bodyTextSize);
     TextStyle? socialTitleStyle =
-        textTheme.subtitle1?.copyWith(fontSize: socialTextSize);
+        textTheme.labelLarge?.copyWith(fontSize: socialTextSize);
 
     List<Widget> cardsForTabletView = buildCardRow(
       context: context,
@@ -125,7 +125,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                   ],
                 ),
                 Positioned(
-                  right: -(sizeOfBlobSm * 0.8),
+                  right: -(sizeOfBlobSm * 0.6),
                   child: HeaderImage(
                     controller: _controller,
                     globeSize: sizeOfGoldenGlobe,
@@ -144,7 +144,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                     margin: EdgeInsets.only(top: heightOfStack * 0.05),
                     child: SelectableText(
                       StringConst.FIRST_NAME,
-                      style: textTheme.headline1?.copyWith(
+                      style: textTheme.displayLarge?.copyWith(
                         color: AppColors.grey50,
                         fontSize: headerIntroTextSize * 2,
                       ),
@@ -168,7 +168,8 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   TypewriterAnimatedText(
                                     StringConst.INTRO,
                                     speed: Duration(milliseconds: 60),
-                                    textStyle: textTheme.headline2?.copyWith(
+                                    textStyle:
+                                        textTheme.displayMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
                                     ),
                                   ),
@@ -186,7 +187,8 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   TypewriterAnimatedText(
                                     StringConst.POSITION,
                                     speed: Duration(milliseconds: 80),
-                                    textStyle: textTheme.headline2?.copyWith(
+                                    textStyle:
+                                        textTheme.displayMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
                                       color: AppColors.primaryColor,
                                       height: 1.2,
@@ -230,12 +232,12 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     SelectableText(
-                                      "${StringConst.BEHANCE}:",
+                                      "${StringConst.PHONE_ME}:",
                                       style: socialTitleStyle,
                                     ),
                                     SpaceH8(),
                                     SelectableText(
-                                      "${StringConst.BEHANCE_ID}",
+                                      "${StringConst.PHONE_NUMBER}",
                                       style: bodyTextStyle,
                                     ),
                                   ],
@@ -245,29 +247,27 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                             SpaceH40(),
                             Row(
                               children: [
-                                NimbusButton(
+                                CvButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
                                   buttonTitle: StringConst.DOWNLOAD_CV,
                                   buttonColor: AppColors.primaryColor,
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    launchUrl(Uri.parse(
+                                        "https://docs.google.com/document/d/1j45Bcc5UddDSj_RF8kI8a7_1MvzKqyfYp84Kjt137ag/edit?tab=t.0"));
+                                  },
                                 ),
                                 SpaceW16(),
-                                NimbusButton(
+                                CvButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
                                   buttonTitle: StringConst.HIRE_ME_NOW,
                                   opensUrl: true,
                                   url: StringConst.EMAIL_URL,
-                                  // onPressed: () =>
-                                  //     openUrlLink(StringConst.EMAIL_URL),
+                                  onPressed: () {
+                                    launchUrl(mail);
+                                  },
                                 ),
-                                // NimBusButtonLink(
-                                //   width: buttonWidth,
-                                //   height: buttonHeight,
-                                //   url: StringConst.EMAIL_URL,
-                                //   buttonTitle: StringConst.HIRE_ME_NOW,
-                                // ),
                               ],
                             ),
                             SpaceH30(),

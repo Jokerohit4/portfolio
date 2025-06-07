@@ -1,11 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/pages/home/sections/about_me_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/awards_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/blog_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/footer_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/header_section/header_section.dart';
+import 'package:nimbus/presentation/pages/home/sections/hobbies_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/nav_section/nav_section_mobile.dart';
 import 'package:nimbus/presentation/pages/home/sections/nav_section/nav_section_web.dart';
 import 'package:nimbus/presentation/pages/home/sections/projects_section.dart';
@@ -19,6 +19,7 @@ import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
+@RoutePage()
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -44,8 +45,8 @@ class _HomePageState extends State<HomePage>
     NavItemData(name: StringConst.ABOUT, key: GlobalKey()),
     NavItemData(name: StringConst.SKILLS, key: GlobalKey()),
     NavItemData(name: StringConst.PROJECTS, key: GlobalKey()),
-    NavItemData(name: StringConst.AWARDS, key: GlobalKey()),
-    NavItemData(name: StringConst.BLOG, key: GlobalKey()),
+    NavItemData(name: StringConst.HOBBIES, key: GlobalKey()),
+    //NavItemData(name: StringConst.BLOG, key: GlobalKey()), ///TODO
   ];
 
   @override
@@ -69,7 +70,6 @@ class _HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     double screenHeight = heightOfScreen(context);
     double spacerHeight = screenHeight * 0.10;
-
     return Scaffold(
       key: _scaffoldKey,
       drawer: ResponsiveBuilder(
@@ -191,13 +191,18 @@ class _HomePageState extends State<HomePage>
                         children: [
                           Container(
                             key: navItems[4].key,
-                            child: AwardsSection(),
+                            child: HobbiesSection(),
                           ),
+                          // Container(
+                          //   key: navItems[4].key,
+                          //   child: AwardsSection(),
+                          // ),
                           SpaceH40(),
-                          Container(
-                            key: navItems[5].key,
-                            child: BlogSection(),
-                          ),
+                          // Container(
+                          //   key: navItems[5].key,
+                          //   child: BlogSection(),
+                          // ),
+                          ///TODO
                           FooterSection(),
                         ],
                       )

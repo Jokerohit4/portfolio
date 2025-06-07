@@ -4,8 +4,6 @@ import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
 import 'package:nimbus/presentation/widgets/buttons/social_button.dart';
 import 'package:nimbus/presentation/widgets/empty.dart';
 import 'package:nimbus/presentation/widgets/nav_item.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
-import 'package:nimbus/presentation/widgets/nimbus_link.dart';
 import 'package:nimbus/presentation/widgets/nimbus_vertical_divider.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/utils/functions.dart';
@@ -76,12 +74,19 @@ class _NavSectionWebState extends State<NavSectionWeb> {
         child: Row(
           children: [
             SizedBox(width: logoSpaceLeft),
-            InkWell(
-              onTap: () {},
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 10),
               child: Image.asset(
-                ImagePath.LOGO_DARK,
-                height: Sizes.HEIGHT_52,
+                ImagePath.LOGO,
+                height: heightOfScreen(context) / 4,
               ),
+            ),
+            SelectableText(
+              "Rohitashwa Singh",
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  //height: 1.5,
+                  // color: AppColors.black,
+                  ),
             ),
             SizedBox(width: logoSpaceRight),
             NimbusVerticalDivider(),
@@ -106,10 +111,10 @@ class _NavSectionWebState extends State<NavSectionWeb> {
             ),
             NimbusVerticalDivider(),
             SizedBox(width: contactBtnSpaceLeft),
-             NimbusButton(
+            CvButton(
               buttonTitle: StringConst.CONTACT_ME,
               width: contactBtnWidth,
-              // onPressed: () => openUrlLink(StringConst.EMAIL_URL),
+              onPressed: () => openUrlLink("tel: 9354859197", context),
               opensUrl: true,
               url: StringConst.EMAIL_URL,
             ),
@@ -161,17 +166,8 @@ class _NavSectionWebState extends State<NavSectionWeb> {
         SocialButton(
           tag: socialItems[index].tag,
           iconData: socialItems[index].iconData,
-          
-          onPressed: () => openUrlLink(socialItems[index].url),
+          onPressed: () => openUrlLink(socialItems[index].url, context),
         ),
-        // NimBusLink(
-        //   url: socialItems[index].url,
-        //   child: SocialButton(
-        //     tag: socialItems[index].tag,
-        //     iconData: socialItems[index].iconData,
-        //     onPressed: (){},
-        //   ),
-        // ),
       );
       items.add(SpaceW16());
     }

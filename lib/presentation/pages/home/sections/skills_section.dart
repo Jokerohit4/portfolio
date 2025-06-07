@@ -14,7 +14,6 @@ const double kRunSpacing = 20.0;
 const double kMainAxisSpacing = 16.0;
 const double kCrossAxisSpacing = 16.0;
 
-
 class SkillsSection extends StatefulWidget {
   SkillsSection({Key? key});
   @override
@@ -166,7 +165,6 @@ class _SkillsSectionState extends State<SkillsSection>
           skillLevelWidth: width,
           controller: _controller,
           skill: skillLevels[index].skill,
-          
           level: skillLevels[index].level,
         ),
       );
@@ -181,34 +179,23 @@ class _SkillsSectionState extends State<SkillsSection>
   }) {
     double invisibleBoxHeight = responsiveSize(context, 0, 10, md: 10, sm: 10);
 
-    return Container(
-      child: StaggeredGridView.countBuilder(
-        crossAxisCount: crossAxisCount,
-        itemCount: Data.skillCardData.length,
-        shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        itemBuilder: (BuildContext context, int index) {
-          if (index == 1 || index == 5) {
-            return Container(color: Colors.transparent);
-          } else {
-            return SkillCard(
-              width: boxWidth,
-              title: Data.skillCardData[index].title,
-              description: Data.skillCardData[index].description,
-              iconData: Data.skillCardData[index].iconData,
-            );
-          }
-        },
-        staggeredTileBuilder: (int index) {
-          if (index == 1 || index == 5) {
-            return StaggeredTile.extent(1, invisibleBoxHeight);
-          } else {
-            return StaggeredTile.extent(1, boxHeight);
-          }
-        },
-        mainAxisSpacing: kMainAxisSpacing,
-        crossAxisSpacing: kCrossAxisSpacing,
-      ),
+    return MasonryGridView.count(
+      crossAxisCount: crossAxisCount,
+      mainAxisSpacing: kMainAxisSpacing,
+      crossAxisSpacing: kCrossAxisSpacing,
+      itemCount: Data.skillCardData.length,
+      itemBuilder: (BuildContext context, int index) {
+        if (index == 1 || index == 5) {
+          return Container(color: Colors.transparent);
+        } else {
+          return SkillCard(
+            width: boxWidth,
+            title: Data.skillCardData[index].title,
+            description: Data.skillCardData[index].description,
+            iconData: Data.skillCardData[index].iconData,
+          );
+        }
+      },
     );
   }
 

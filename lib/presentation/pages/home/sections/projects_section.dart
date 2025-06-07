@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
 import 'package:nimbus/presentation/widgets/nimbus_info_section.dart';
 import 'package:nimbus/presentation/widgets/project_item.dart';
@@ -37,10 +36,11 @@ class _ProjectsSectionState extends State<ProjectsSection>
   late Animation<double> _projectScaleAnimation;
   List<List<ProjectData>> projects = [
     Data.allProjects,
-    Data.branding,
-    Data.packaging,
-    Data.photograhy,
-    Data.webDesign,
+    Data.wiom,
+    Data.realSol,
+    Data.neodocs,
+    Data.gmagica,
+    Data.personalProjects
   ];
   late List<ProjectData> selectedProject;
   late List<ProjectCategoryData> projectCategories;
@@ -96,7 +96,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
         builder: (context, sizingInformation) {
           double screenWidth = sizingInformation.screenSize.width;
           if (screenWidth < (RefinedBreakpoints().tabletLarge)) {
-            return Container(
+            return Padding(
               padding:
                   EdgeInsets.symmetric(horizontal: getSidePadding(context)),
               child: ContentArea(
@@ -107,11 +107,11 @@ class _ProjectsSectionState extends State<ProjectsSection>
                   children: [
                     _buildNimbusInfoSectionSm(),
                     SpaceH40(),
-                    NimbusButton(
-                      buttonTitle: StringConst.ALL_PROJECTS,
-                      buttonColor: AppColors.primaryColor,
-                      onPressed: () {},
-                    ),
+                    // CvButton(
+                    //   buttonTitle: StringConst.ALL_PROJECTS,
+                    //   buttonColor: AppColors.primaryColor,
+                    //   onPressed: () {},
+                    // ),
                     SpaceH40(),
                     Wrap(
                       spacing: kSpacing,
@@ -141,7 +141,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
               },
               child: Column(
                 children: [
-                  Container(
+                  Padding(
                     padding: EdgeInsets.symmetric(
                       horizontal: getSidePadding(context),
                     ),
@@ -153,20 +153,23 @@ class _ProjectsSectionState extends State<ProjectsSection>
                         children: [
                           ContentArea(
                             width: contentAreaWidth * 0.6,
+                            height: MediaQuery.of(context).size.height / 3.2,
                             child: _buildNimbusInfoSectionLg(),
                           ),
                           Spacer(),
-                          NimbusButton(
-                            buttonTitle: StringConst.ALL_PROJECTS,
-                            buttonColor: AppColors.primaryColor,
-                            onPressed: () {},
-                          ),
+                          // CvButton(
+                          //   buttonTitle: StringConst.ALL_PROJECTS,
+                          //   buttonColor: AppColors.primaryColor,
+                          //   onPressed: () {},
+                          // ),
                         ],
                       ),
                     ),
                   ),
                   SpaceH40(),
                   Container(
+                    margin: EdgeInsets.symmetric(
+                        horizontal: getSidePadding(context)),
                     width: widthOfScreen(context),
                     child: Wrap(
                       spacing: assignWidth(context, 0.025),
@@ -189,7 +192,6 @@ class _ProjectsSectionState extends State<ProjectsSection>
       title1: StringConst.MEET_MY_PROJECTS,
       hasTitle2: false,
       body: StringConst.PROJECTS_DESC,
-//      child: ,
     );
   }
 
@@ -242,6 +244,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
             title: data[index].title,
             subtitle: data[index].category,
             imageUrl: data[index].projectCoverUrl,
+            link: data[index].link,
           ),
         ),
       );
@@ -259,7 +262,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
     });
   }
 
-  changeCategorySelected(int selectedIndex) {
+  void changeCategorySelected(int selectedIndex) {
     for (int index = 0; index < projectCategories.length; index++) {
       if (index == selectedIndex) {
         setState(() {
@@ -338,7 +341,7 @@ class _ProjectCategoryState extends State<ProjectCategory>
                 style: widget.titleStyle?.copyWith(
                       color: colorOfCategory(),
                     ) ??
-                    textTheme.subtitle1?.copyWith(
+                    textTheme.labelLarge?.copyWith(
                       fontSize: Sizes.TEXT_SIZE_16,
                       color: colorOfCategory(),
                     ),
@@ -369,7 +372,7 @@ class _ProjectCategoryState extends State<ProjectCategory>
         style: widget.numberStyle?.copyWith(
               color: widget.hoverColor,
             ) ??
-            textTheme.subtitle1?.copyWith(
+            textTheme.labelLarge?.copyWith(
               fontSize: Sizes.TEXT_SIZE_16,
               color: widget.hoverColor,
             ),

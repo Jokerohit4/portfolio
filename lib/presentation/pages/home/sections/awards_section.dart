@@ -8,9 +8,7 @@ import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-
 class AwardsSection extends StatefulWidget {
-
   AwardsSection({Key? key});
   @override
   _AwardsSectionState createState() => _AwardsSectionState();
@@ -25,7 +23,7 @@ class _AwardsSectionState extends State<AwardsSection>
   @override
   void initState() {
     super.initState();
-  
+
     _controller = AnimationController(
       duration: const Duration(seconds: 20),
       vsync: this,
@@ -184,7 +182,7 @@ class _AwardsSectionState extends State<AwardsSection>
     required double height,
   }) {
     TextTheme textTheme = Theme.of(context).textTheme;
-    TextStyle? titleStyle = textTheme.bodyText1?.merge(
+    TextStyle? titleStyle = textTheme.bodyLarge?.merge(
       Styles.customTextStyle3(
         fontSize: responsiveSize(context, 64, 80, md: 76),
         height: 1.25,
@@ -232,19 +230,19 @@ class _AwardsSectionState extends State<AwardsSection>
               AnimatedPositioned(
                 left: text1InView ? textPosition : -150,
                 child: Text(StringConst.MY, style: titleStyle),
-                 curve: Curves.fastOutSlowIn,
-                 onEnd: (){
-                   setState(() {
-                     text2InView = true;
-                   });
-                 },
-                 duration: Duration(milliseconds: 750),
+                curve: Curves.fastOutSlowIn,
+                onEnd: () {
+                  setState(() {
+                    text2InView = true;
+                  });
+                },
+                duration: Duration(milliseconds: 750),
               ),
               AnimatedPositioned(
                 right: text2InView ? textPosition : -150,
                 child: Text(StringConst.CV, style: titleStyle),
-                 curve: Curves.fastOutSlowIn,
-                 duration: Duration(milliseconds: 750),
+                curve: Curves.fastOutSlowIn,
+                duration: Duration(milliseconds: 750),
               ),
             ],
           ),
@@ -260,7 +258,7 @@ class _AwardsSectionState extends State<AwardsSection>
       children: [
         Text(
           StringConst.AWARDS_TYPE_TITLE_1,
-          style: textTheme.headline6,
+          style: textTheme.titleSmall,
         ),
         SpaceH16(),
         ..._buildAwards(Data.awards1),
@@ -275,7 +273,7 @@ class _AwardsSectionState extends State<AwardsSection>
       children: [
         Text(
           StringConst.AWARDS_TYPE_TITLE_2,
-          style: textTheme.headline5,
+          style: textTheme.titleSmall,
         ),
         SpaceH16(),
         ..._buildAwards(Data.awards1),

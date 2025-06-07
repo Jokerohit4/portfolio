@@ -40,76 +40,74 @@ class NimbusInfoSection1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
-    TextStyle? titleStyle = textTheme.headline3?.copyWith(
+    TextStyle? titleStyle = textTheme.displaySmall?.copyWith(
       fontSize: responsiveSize(context, 26, 36, md: 32),
     );
     double fontSize = responsiveSize(context, 16, 18);
-    return Container(
-      child: IntrinsicHeight(
-        child: Row(
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+    return IntrinsicHeight(
+      child: Row(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              RotatedBox(
+                quarterTurns: quarterTurns,
+                child: Text(
+                  sectionTitle,
+                  style: textTheme.bodyMedium?.copyWith(
+                    fontSize: fontSize,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.grey250,
+                  ),
+                ),
+              ),
+              SpaceH16(),
+              Container(
+                height: dividerHeight,
+                child: VerticalDivider(
+                  color: dividerColor,
+                  thickness: thickness,
+                ),
+              ),
+            ],
+          ),
+          SpaceW16(),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                RotatedBox(
-                  quarterTurns: quarterTurns,
-                  child: Text(
-                    sectionTitle,
-                    style: textTheme.bodyText2?.copyWith(
-                      fontSize: fontSize,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.grey250,
-                    ),
-                  ),
+                Text(
+                  title1,
+                  style: title1Style ?? titleStyle,
                 ),
-                SpaceH16(),
-                Container(
-                  height: dividerHeight,
-                  child: VerticalDivider(
-                    color: dividerColor,
-                    thickness: thickness,
-                  ),
+                hasTitle2
+                    ? SizedBox(
+                        height: responsiveSize(
+                          context,
+                          Sizes.HEIGHT_4,
+                          Sizes.HEIGHT_16,
+                          md: Sizes.HEIGHT_8,
+                        ),
+                      )
+                    : Empty(),
+                hasTitle2
+                    ? Text(
+                        title2,
+                        style: title2Style ?? titleStyle,
+                      )
+                    : Empty(),
+                SpaceH20(),
+                Text(
+                  body,
+                  style: textTheme.bodyLarge
+                      ?.copyWith(fontSize: fontSize, height: 1.8),
                 ),
+                child != null ? SpaceH30() : Empty(),
+                child ?? Empty(),
               ],
             ),
-            SpaceW16(),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title1,
-                    style: title1Style ?? titleStyle,
-                  ),
-                  hasTitle2
-                      ? SizedBox(
-                          height: responsiveSize(
-                            context,
-                            Sizes.HEIGHT_4,
-                            Sizes.HEIGHT_16,
-                            md: Sizes.HEIGHT_8,
-                          ),
-                        )
-                      : Empty(),
-                  hasTitle2
-                      ? Text(
-                          title2,
-                          style: title2Style ?? titleStyle,
-                        )
-                      : Empty(),
-                  SpaceH20(),
-                  Text(
-                    body,
-                    style: textTheme.bodyText1
-                        ?.copyWith(fontSize: fontSize, height: 1.8),
-                  ),
-                  child != null ? SpaceH30() : Empty(),
-                  child ?? Empty(),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -149,7 +147,7 @@ class NimbusInfoSection2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
-    TextStyle? titleStyle = textTheme.headline3?.copyWith(
+    TextStyle? titleStyle = textTheme.displaySmall?.copyWith(
       fontSize: responsiveSize(context, 26, 48, md: 32),
     );
     double fontSize = responsiveSize(context, 16, 18);
@@ -169,7 +167,7 @@ class NimbusInfoSection2 extends StatelessWidget {
             SpaceW16(),
             Text(
               sectionTitle,
-              style: textTheme.bodyText2?.copyWith(
+              style: textTheme.bodyMedium?.copyWith(
                 fontSize: fontSize,
                 fontWeight: FontWeight.w400,
                 color: AppColors.grey250,
@@ -205,7 +203,7 @@ class NimbusInfoSection2 extends StatelessWidget {
             SpaceH20(),
             Text(
               body,
-              style: textTheme.bodyText1
+              style: textTheme.bodyLarge
                   ?.copyWith(fontSize: fontSize, height: 1.8),
             ),
             child != null ? SpaceH30() : Empty(),
