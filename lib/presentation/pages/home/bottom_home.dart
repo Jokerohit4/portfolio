@@ -14,7 +14,9 @@ class BottomHomeBody extends StatelessWidget {
       children: [
         Positioned(
           left: -assignWidth(context, 0.6),
-          child: Image.asset(ImagePath.BLOB_ASH),
+          child: Image.asset(Theme.of(context).brightness.name.contains("dark")
+              ? ImagePath.BLOB_DRUMSTICK_BLACK
+              : ImagePath.BLOB_ASH),
         ),
         Column(
           children: [

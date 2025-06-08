@@ -30,7 +30,10 @@ class BodyHome extends StatelessWidget {
                 Positioned.fill(
                   child: Align(
                     alignment: Alignment.center,
-                    child: Image.asset(ImagePath.BLOB_BEAN_ASH),
+                    child: Image.asset(
+                        Theme.of(context).brightness.name.contains("dark")
+                            ? ImagePath.BLOB_BLACK
+                            : ImagePath.BLOB_BEAN_ASH),
                   ),
                 ),
                 // AboutMe(
@@ -45,7 +48,10 @@ class BodyHome extends StatelessWidget {
                 Positioned(
                   top: assignWidth(context, 0.1),
                   left: -assignWidth(context, 0.05),
-                  child: Image.asset(ImagePath.BLOB_FEMUR_ASH),
+                  child: Image.asset(
+                      Theme.of(context).brightness.name.contains("dark")
+                          ? ImagePath.BLOB_BLACK
+                          : ImagePath.BLOB_FEMUR_ASH),
                 ),
                 Positioned(
                   right: -assignWidth(context, 0.5),
