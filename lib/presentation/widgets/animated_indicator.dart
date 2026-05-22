@@ -30,7 +30,6 @@ class AnimatedHoverIndicator extends StatelessWidget {
   }
 }
 
-
 class AnimatedHoverIndicator2 extends StatelessWidget {
   const AnimatedHoverIndicator2({
     // required this.width,

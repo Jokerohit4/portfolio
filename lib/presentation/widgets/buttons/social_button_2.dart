@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
 
 class SocialButton2Data {
   final String title;
   final String url;
-  final IconData iconData;
+  final Object iconData;
   final Color? iconColor;
   final Color? buttonColor;
   final Color? titleColor;
@@ -49,7 +50,7 @@ class SocialButton2 extends StatefulWidget {
   final double? width;
   final double? height;
   final double elevation;
-  final IconData iconData;
+  final Object iconData;
   final double iconSize;
   final Color? iconColor;
   final Color? buttonColor;
@@ -116,11 +117,9 @@ class _SocialButton2State extends State<SocialButton2>
                   borderRadius: BorderRadius.all(Radius.circular(4))),
               child: MaterialButton(
                 onPressed: widget.onPressed,
-                child: Icon(
-                  widget.iconData,
-                  size: widget.iconSize,
-                  color: _isHovering ? widget.buttonColor : widget.iconColor,
-                ),
+                child: widget.iconData is FaIconData
+                    ? FaIcon(widget.iconData as FaIconData, size: widget.iconSize, color: _isHovering ? widget.buttonColor : widget.iconColor)
+                    : Icon(widget.iconData as IconData, size: widget.iconSize, color: _isHovering ? widget.buttonColor : widget.iconColor),
               ),
             ),
             SpaceW12(),

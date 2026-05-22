@@ -3,14 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/pages/home/sections/about_me_section.dart';
+import 'package:nimbus/presentation/pages/home/sections/architecture_section.dart';
+import 'package:nimbus/presentation/pages/home/sections/articles_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/footer_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/header_section/header_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/hobbies_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/nav_section/nav_section_mobile.dart';
 import 'package:nimbus/presentation/pages/home/sections/nav_section/nav_section_web.dart';
+import 'package:nimbus/presentation/pages/home/sections/ozi_section.dart';
+import 'package:nimbus/presentation/pages/home/sections/performance_metrics_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/projects_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/skills_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/statistics_section.dart';
+import 'package:nimbus/presentation/pages/home/sections/testimonials_section.dart';
 import 'package:nimbus/presentation/widgets/app_drawer.dart';
 import 'package:nimbus/presentation/widgets/nav_item.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
@@ -59,8 +64,35 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     _scrollController.addListener(() {
-      if (_scrollController.position.pixels < 100) {
+      final scrollOffset = _scrollController.position.pixels;
+
+      // FAB: show when scrolled down, hide when at top
+      if (scrollOffset < 100) {
         _controller.reverse();
+      } else {
+        _controller.forward();
+      }
+
+      // Scrollspy: find which section is active
+      int newSelectedIndex = 0;
+      for (int i = 0; i < navItems.length; i++) {
+        final sectionContext = navItems[i].key.currentContext;
+        if (sectionContext == null) continue;
+        final renderBox = sectionContext.findRenderObject() as RenderBox?;
+        if (renderBox == null || !renderBox.attached) continue;
+        final sectionTop = renderBox.localToGlobal(Offset.zero).dy;
+        if (sectionTop <= 120) {
+          newSelectedIndex = i;
+        }
+      }
+
+      // Only rebuild when selection actually changes
+      if (!navItems[newSelectedIndex].isSelected) {
+        setState(() {
+          for (int i = 0; i < navItems.length; i++) {
+            navItems[i].isSelected = i == newSelectedIndex;
+          }
+        });
       }
     });
     super.initState();
@@ -92,7 +124,7 @@ class _HomePageState extends State<HomePage>
             // Scroll to header section
             scrollToSection(navItems[0].key.currentContext!);
           },
-          child: Icon(
+          child: FaIcon(
             FontAwesomeIcons.arrowUp,
             size: Sizes.ICON_SIZE_18,
             color: AppColors.white,
@@ -182,6 +214,16 @@ class _HomePageState extends State<HomePage>
                             key: navItems[3].key,
                             child: ProjectsSection(),
                           ),
+                          SizedBox(height: spacerHeight),
+                          OziSection(),
+                          SizedBox(height: spacerHeight),
+                          PerformanceMetricsSection(),
+                          SizedBox(height: spacerHeight),
+                          ArchitectureSection(),
+                          SizedBox(height: spacerHeight),
+                          TestimonialsSection(),
+                          SizedBox(height: spacerHeight),
+                          ArticlesSection(),
                         ],
                       ),
                     ],

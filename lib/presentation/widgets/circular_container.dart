@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nimbus/values/values.dart';
 
 class CircularContainer extends StatelessWidget {
@@ -16,7 +17,7 @@ class CircularContainer extends StatelessWidget {
 
   final double? width;
   final double? height;
-  final IconData iconData;
+  final Object iconData;
   final double iconSize;
   final Color iconColor;
   final BorderRadius borderRadius;
@@ -35,11 +36,9 @@ class CircularContainer extends StatelessWidget {
         borderRadius: borderRadius,
       ),
       child: child ??
-          Icon(
-            iconData,
-            color: iconColor,
-            size: iconSize,
-          ),
+          (iconData is FaIconData
+              ? FaIcon(iconData as FaIconData, color: iconColor, size: iconSize)
+              : Icon(iconData as IconData, color: iconColor, size: iconSize)),
     );
   }
 }

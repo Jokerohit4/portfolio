@@ -128,4 +128,10 @@ class ImagePath {
       "$screenshotsDir/${personalJammerz}_04.png";
   static const String PERSONAL_PROJECTS_JAMMERZ_FIVE =
       "$screenshotsDir/${personalJammerz}_05.png";
+
+  ///OZI
+  static const String ozi = "OZI_USER";
+  static const String OZI_USER_ONE = "$screenshotsDir/${ozi}_01.png";
+  static const String OZI_USER_TWO = "$screenshotsDir/${ozi}_02.png";
+  static const String OZI_USER_THREE = "$screenshotsDir/${ozi}_03.png";
 }

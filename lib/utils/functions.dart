@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 const kDuration = Duration(milliseconds: 600);
 
 Future<void> openUrlLink(String url, BuildContext context) async {
-  if (await canLaunch(url)) {
+  if (await canLaunchUrl(Uri.parse(url))) {
     await launch(
       url,
       forceSafariVC: false,

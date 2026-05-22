@@ -110,7 +110,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                   Container(
                     margin: EdgeInsets.only(top: heightOfStack * 0.1),
                     child: SelectableText(
-                      StringConst.FIRST_NAME,
+                      "",
                       style: textTheme.displayLarge?.copyWith(
                         color: AppColors.grey50,
                         fontSize: headerIntroTextSize * 2.5,
@@ -237,7 +237,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                             ),
                             SpaceH30(),
                             Wrap(
-                              children: buildSocialIcons(Data.socialData),
+                              children: buildSocialIcons(context, Data.socialData),
                             )
                           ],
                         ),

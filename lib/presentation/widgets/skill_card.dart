@@ -6,7 +6,7 @@ import 'package:nimbus/values/values.dart';
 class SkillCardData {
   final String title;
   final String description;
-  final IconData iconData;
+  final Object iconData;
 
   SkillCardData(
       {required this.title, required this.iconData, required this.description});
@@ -43,7 +43,7 @@ class SkillCard extends StatefulWidget {
   final Color backgroundColor;
   final Color iconColor;
   final Color iconBackgroundColor;
-  final IconData iconData;
+  final Object iconData;
   final Widget? child;
   final Widget? onHoverChild;
 

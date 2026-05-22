@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nimbus/values/values.dart';
 
 class SocialButtonData {
   final String tag;
   final String url;
-  final IconData iconData;
+  final Object iconData;
   final Color? iconColor;
   final Color? borderColor;
 
@@ -21,7 +22,7 @@ class SocialButton extends StatelessWidget {
   const SocialButton({
     required this.tag,
     required this.iconData,
-     this.onPressed,
+    this.onPressed,
     this.width = Sizes.WIDTH_28,
     this.height = Sizes.HEIGHT_28,
     this.elevation = Sizes.ELEVATION_1,
@@ -35,7 +36,7 @@ class SocialButton extends StatelessWidget {
   final double width;
   final double elevation;
   final double height;
-  final IconData iconData;
+  final Object iconData;
   final double iconSize;
   final Color iconColor;
   final Color buttonColor;
@@ -50,17 +51,13 @@ class SocialButton extends StatelessWidget {
       decoration: decoration,
       child: FloatingActionButton(
         elevation: elevation,
-        onPressed:  onPressed,
+        onPressed: onPressed,
         backgroundColor: buttonColor,
         heroTag: tag,
-        child: Icon(
-        iconData,
-        size: iconSize,
-        color: iconColor,
-      ),
+        child: iconData is FaIconData
+            ? FaIcon(iconData as FaIconData, size: iconSize, color: iconColor)
+            : Icon(iconData as IconData, size: iconSize, color: iconColor),
       ),
     );
   }
-
-  
 }

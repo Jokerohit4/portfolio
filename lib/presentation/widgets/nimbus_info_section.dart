@@ -44,35 +44,38 @@ class NimbusInfoSection1 extends StatelessWidget {
       fontSize: responsiveSize(context, 26, 36, md: 32),
     );
     double fontSize = responsiveSize(context, 16, 18);
-    return IntrinsicHeight(
-      child: Row(
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              RotatedBox(
-                quarterTurns: quarterTurns,
-                child: Text(
-                  sectionTitle,
-                  style: textTheme.bodyMedium?.copyWith(
-                    fontSize: fontSize,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.grey250,
-                  ),
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            RotatedBox(
+              quarterTurns: quarterTurns,
+              child: Text(
+                sectionTitle,
+                style: textTheme.bodyMedium?.copyWith(
+                  fontSize: fontSize,
+                  fontWeight: FontWeight.w400,
+                  color: AppColors.grey250,
                 ),
               ),
-              SpaceH16(),
-              Container(
-                height: dividerHeight,
-                child: VerticalDivider(
-                  color: dividerColor,
-                  thickness: thickness,
-                ),
+            ),
+            SpaceH16(),
+            Container(
+              height: dividerHeight,
+              child: VerticalDivider(
+                color: dividerColor,
+                thickness: thickness,
               ),
-            ],
-          ),
-          SpaceW16(),
-          Expanded(
+            ),
+          ],
+        ),
+        SpaceW16(),
+        Expanded(
+          child: SingleChildScrollView(
+            physics: const NeverScrollableScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -107,8 +110,8 @@ class NimbusInfoSection1 extends StatelessWidget {
               ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

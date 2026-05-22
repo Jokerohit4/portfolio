@@ -83,8 +83,9 @@ class _NavSectionWebState extends State<NavSectionWeb> {
                 height: heightOfScreen(context) / 4,
               ),
             ),
+            SizedBox(width: logoSpaceLeft),
             SelectableText(
-              "Rohitashwa Singh",
+              "Portfolio",
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   //height: 1.5,
                   // color: AppColors.black,

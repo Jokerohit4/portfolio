@@ -294,9 +294,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
                   children: [
                     Text(
                       StringConst.FOLLOW_ME_1,
-                      style: textTheme.titleSmall?.copyWith(
-                        color: AppColors.black,
-                      ),
+                      style: textTheme.titleSmall,
                     ),
                     SpaceH16(),
                     Wrap(
@@ -328,7 +326,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
         children: [
           Text(
             StringConst.FOLLOW_ME_1,
-            style: textTheme.titleSmall?.copyWith(color: AppColors.black),
+            style: textTheme.titleSmall,
           ),
           SpaceH16(),
           Wrap(

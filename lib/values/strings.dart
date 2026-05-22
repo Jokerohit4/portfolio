@@ -21,18 +21,18 @@ class StringConst {
 
   //Header Section
   static const String FIRST_NAME = "Rohitashwa";
+  static const String LAST_NAME = "Singh";
   static const String INTRO = "Hi! I'm Rohitashwa Singh";
-  static const String POSITION = "Mobile Developer";
+  static const String POSITION = "Mobile Engineering Lead";
   static const String ABOUT_ME_INTRO =
-      "I'm a passionate Flutter developer with a knack for solving complex performance problems, refining user experiences, and architecting scalable applications.";
+      "I lead mobile engineering teams and build high-performance Flutter apps. Currently Mobile Lead at OZi (quick-commerce), managing a team of 5 and driving the app from 4.2★ to 4.8★ with 99.8% crash-free sessions.";
   static const String ABOUT_ME_DETAILS =
-      "Over the last few years, I’ve rebuilt and optimized multiple apps for startups and high-growth companies, independently delivering everything from customer-facing apps to internal tools. With a background in UI/UX, clean architecture, and real-world leadership experience, I bring both the code and the clarity to every product I touch.";
+      "Over 6 years, I’ve shipped production apps from zero to scale. Currently Mobile Engineering Lead at OZi—led a team of 5 to 99.8% crash-free sessions, 4.8★ rating (up from 4.2★), and 1,237+ commits in 4 months. I work independently and async—ideal for remote teams.";
   static const String ABOUT_DEV =
-      "Mobile Developer with over more than 5 years of experience working in the industry with a knack for solving complex performance problems, refining user experiences, and architecting scalable applications.";
-  static const String ABOUT_ME_1 =
-      "Product Designer and Digital Creative Director working in design field for";
+      "Mobile Engineering Lead (5+ years experience in Flutter) at OZi. Leads a team of 5, specializing in architecture, performance, and scalable app delivery. Available for remote work.";
+  static const String ABOUT_ME_1 = "I focus on one thing:";
   static const String ABOUT_ME_2 =
-      "13 years so far, specialized in UI/UX, Branding and digital designs.";
+      "Building fast, scalable mobile apps that users love.";
   static const String DOWNLOAD_CV = "Download CV";
   static const String EMAIL = "Email";
   static const String DEV_EMAIL_2 = "me@rohitashwa.co.in";
@@ -41,12 +41,12 @@ class StringConst {
   static const String LINKED_IN_ID =
       "https://www.linkedin.com/in/rohitashwa-singh-mobile-apps-flutter-android-ios/";
   static const String HIRE_ME_NOW = "Hire Me Now";
-  static const String JOB_ROLE = "Mobile Developer";
-  static const String MOBILE_DESC = "creative apps for you";
-  static const String DESIGNER = "Designer";
-  static const String DESIGNER_DESC = "Awesome figma designs";
-  static const String FREELANCER = "Freelancer";
-  static const String FREELANCER_DESC = "You can hire me now";
+  static const String JOB_ROLE = "Flutter Expert";
+  static const String MOBILE_DESC = "High-performance mobile apps";
+  static const String DESIGNER = "Startup Builder";
+  static const String DESIGNER_DESC = "Leading OZi mobile team of 5";
+  static const String FREELANCER = "Remote-First";
+  static const String FREELANCER_DESC = "Available for contracts";
 
   static const String FLUTTER = "Flutter";
   static const String JAVA = "Java";
@@ -60,17 +60,15 @@ class StringConst {
   static const String THERE = "There!";
   static const String ABOUT_ME = "about me";
   static const String ABOUT_ME_DESC =
-      "Mobile developer and entrepreneur with a strong background in building and growing startups. From leading teams to developing innovative mobile solutions, I understand the fast-paced, ever-changing needs of a startup. My experience spans creating user-friendly, efficient apps that help businesses scale while ensuring customer satisfaction. I’ve successfully taken on leadership roles, built cross-functional teams, and driven projects that directly contribute to business growth. Whether it’s improving user experiences, reducing costs, or speeding up product delivery, I bring a results-driven approach that will help a startup thrive. Additionally, I’m skilled in designing intuitive UI/UX for apps and have proficiency in tools like Figma, Canva, and Photoshop to ensure the visual appeal matches the functionality.";
-  static const String ABOUT_ME_DESC_1 =
-      "Product Designer and Digital Creative Director working in design ";
+      "Currently Mobile Engineering Lead at OZi (quick-commerce), leading a team of 5. Previously shipped production apps for WIOM (D2C- internet), Real Solutions (ed-tech), Neodocs (health), and Gmagica. I optimize for latency, memory, and user retention. Open to remote roles that value clean code and product thinking.";
+  static const String ABOUT_ME_DESC_1 = "What I do:";
   static const String ABOUT_ME_DESC_2 =
-      "field for 13 years so far, specialized in UI/UX, Branding and digital";
+      "I write production-grade Flutter code.";
   static const String ABOUT_ME_DESC_3 =
-      "designs. These are the words we live by in everything we do. Every";
-  static const String ABOUT_ME_DESC_4 =
-      "story we tell, every brand we build, and every interaction we";
+      "I debug performance at the architecture level.";
+  static const String ABOUT_ME_DESC_4 = "I ship solo or lead small teams.";
   static const String ABOUT_ME_DESC_5 =
-      "create must not only look beautiful. beautifully, too.";
+      "I write clear documentation and communicate async.";
   static const String STARTUP = "Working on a new startup?";
   static const String HELP = "I can Help You!";
   static const String FOLLOW_ME_1 = "You can also follow me here:";
@@ -78,29 +76,29 @@ class StringConst {
   static const String INSTA = "Insta";
 
   //Skills Section
-  static const String MY_SKILLS = "my skills";
-  static const String SKILLS_TITLE_1 = "What My SkillSet";
-  static const String SKILLS_TITLE_2 = "Include";
+  static const String MY_SKILLS = "my technical stack";
+  static const String SKILLS_TITLE_1 = "What I'm";
+  static const String SKILLS_TITLE_2 = "Really Good At";
   static const String SKILLS_DESC =
-      "These are the words we live by in everything we do. Every story we tell, every brand we build, and every interaction we create must not only look beautiful.";
-  static const String TOOLS_1_NAME = "Photoshop";
-  static const String TOOLS_1_PROFICIENCY = "80%";
-  static const String TOOLS_2_NAME = "Illustrator";
-  static const String TOOLS_2_PROFICIENCY = "90%";
-  static const String TOOLS_3_NAME = "Sketch";
-  static const String TOOLS_3_PROFICIENCY = "70%";
+      "5 years of shipping production apps. I specialize in mobile performance, real-time data, custom media handling, and clean architecture at scale.";
+  static const String TOOLS_1_NAME = "Performance Optimization";
+  static const String TOOLS_1_PROFICIENCY = "Advanced";
+  static const String TOOLS_2_NAME = "Architecture & Design Patterns";
+  static const String TOOLS_2_PROFICIENCY = "Advanced";
+  static const String TOOLS_3_NAME = "Platform-Specific Code";
+  static const String TOOLS_3_PROFICIENCY = "Advanced";
   static const String SKILLS_1 = "Flutter";
   static const String SKILLS_1_DESC =
-      "We believe direct collaboration with our clients is essential to bringing unique";
-  static const String SKILLS_2 = "Graphic Design";
+      "Shipped 5+ production apps. Familiar with all platforms: iOS, Android, Web, macOS.";
+  static const String SKILLS_2 = "Custom Media Handling";
   static const String SKILLS_2_DESC =
-      "We believe direct collaboration with our clients is essential to bringing unique";
-  static const String SKILLS_3 = "Motion Design";
+      "Video playback optimization, streaming, caching strategies, real-time protocols.";
+  static const String SKILLS_3 = "Backend Integration";
   static const String SKILLS_3_DESC =
-      "We believe direct collaboration with our clients is essential to bringing unique";
-  static const String SKILLS_4 = "UI/UX Design";
+      "Firebase, REST APIs, WebSockets, real-time data, offline-first architecture.";
+  static const String SKILLS_4 = "Performance Profiling";
   static const String SKILLS_4_DESC =
-      "We believe direct collaboration with our clients is essential to bringing unique";
+      "Memory management, jank analysis, build optimization, startup time reduction.";
   static const String SKILLS_5 = "Firebase";
   static const String SKILLS_6 = "Android";
   static const String SKILLS_7 = "iOS";
@@ -108,14 +106,14 @@ class StringConst {
   static const String SKILLS_9 = "Java";
 
   //Stats Section
-  static const String HAPPY_CLIENTS = "Happy Clients";
-  static const String HAPPY_CLIENTS_NUM = "120";
-  static const String YEARS_OF_EXPERIENCE = "Years of Experience";
-  static const String YEARS_OF_EXPERIENCE_NUM = "10";
-  static const String INCREDIBLE_PROJECTS = "Incredible Projects";
-  static const String INCREDIBLE_PROJECTS_NUM = "230";
-  static const String AWARD_WINNING = "Award Winning";
-  static const String AWARD_WINNING_NUM = "18";
+  static const String HAPPY_CLIENTS = "Companies I've Worked With";
+  static const String HAPPY_CLIENTS_NUM = "6";
+  static const String YEARS_OF_EXPERIENCE = "Years Shipping Production";
+  static const String YEARS_OF_EXPERIENCE_NUM = "5+";
+  static const String INCREDIBLE_PROJECTS = "Apps Built & Optimized";
+  static const String INCREDIBLE_PROJECTS_NUM = "13";
+  static const String AWARD_WINNING = "Passionate About Quality";
+  static const String AWARD_WINNING_NUM = "100%";
 
   //Projects Section
   static const String MEET_MY_PROJECTS = "Meet My Projects";
@@ -176,80 +174,106 @@ class StringConst {
       "https://play.google.com/store/apps/details?id=ci.moovmoney.mmpayapi&hl=en_IN";
   static const String JAMMERZ = "Jammerz : The Music Streaming App";
   static const String JAMMERZ_LINK = "https://practice-projects-7c9bf.web.app/";
+  static const String OZI = "OZi";
+  static const String OZI_USER_APP = "OZi – Quick Commerce App";
+  static const String OZI_USER_APP_LINK =
+      "https://play.google.com/store/apps/details?id=com.ozi.user";
+
+  // Featured Project
+  static const String PHOOL_GOBHI = "Phool Gobhi";
+  static const String PHOOL_GOBHI_SUBTITLE =
+      "Short-Form Video App for Creators";
+  static const String PHOOL_GOBHI_DESC =
+      "A high-performance short-form video platform built with Flutter. Features: custom media player with LRU caching, real-time streaming optimization, platform-specific UI (iOS/Android). Built from zero to MVP focusing on video playback performance and memory efficiency. Open to feedback and partnerships.";
+  static const String PHOOL_GOBHI_LINK = "https://phoolgobi.com";
   static const String PORTFOLIO_4_TITLE = "3D Animation";
   static const String PORTFOLIO_5_TITLE = "Collect Idea";
   static const String PORTFOLIO_6_TITLE = "Company Branding";
 
   //HOBBIES & Section
-  static const String MY_HOBBIES = "my hobbies";
-  static const String HOBBIES_TITLE = "HOBBIES";
+  static const String MY_HOBBIES = "what drives me";
+  static const String HOBBIES_TITLE = "INTERESTS & FOCUS";
   static const String HOBBIES_DESC =
-      "Since a kid I have been keenly exploring and have experienced a lot of hobbies";
-  static const String HOBBIES_TYPE_TITLE_1 = "PROFESSIONAL";
-  static const String HOBBIES_TYPE_TITLE_2 = "NOT SO PROFESSIONAL";
-  static const String HOBBY_1 = "Product Development";
-  static const String HOBBY_2 = "Photography";
-  static const String HOBBY_3 = "Designing";
-  static const String HOBBY_4 = "Entrepreneur";
-  static const String HOBBY_5 = "Copy writing";
-  static const String HOBBY_6 = "Travelling";
-  static const String HOBBY_7 = "Bike Riding";
-  static const String HOBBY_8 = "Gym";
-  static const String HOBBY_9 = "Football";
-  static const String HOBBY_10 = "Film Making";
+      "I'm driven by solving hard problems and building products people love.";
+  static const String HOBBIES_TYPE_TITLE_1 = "BUILDING";
+  static const String HOBBIES_TYPE_TITLE_2 = "LEARNING";
+  static const String HOBBY_1 = "Shipping Products (Phool Gobhi)";
+  static const String HOBBY_2 = "Performance Optimization";
+  static const String HOBBY_3 = "System Design";
+  static const String HOBBY_4 = "Technical Mentorship";
+  static const String HOBBY_5 = "Open Source (Flutter)";
+  static const String HOBBY_6 = "Creator Economy Tech";
+  static const String HOBBY_7 = "Real-time Systems";
+  static const String HOBBY_8 = "Media Technology";
+  static const String HOBBY_9 = "Startup Scaling";
+  static const String HOBBY_10 = "Clean Architecture Patterns";
 
   //Awards & Section
   static const String MY = "My";
   static const String CV = "RESUME";
-  static const String MY_AWARDS = "my awards";
-  static const String AWARDS_TITLE = "Honours & Awards";
+  static const String MY_AWARDS = "my technical highlights";
+  static const String AWARDS_TITLE = "What I've Shipped";
   static const String AWARDS_DESC =
-      "Since 2015 I have been a visionary and a reliable software engineering partner for world-class brands.";
-  static const String AWARDS_TYPE_TITLE_1 = "In Press";
-  static const String AWARDS_TYPE_TITLE_2 = "Awards";
-  static const String AWARDS_1 = "Forbes";
-  static const String AWARDS_2 = "New York Times";
-  static const String AWARDS_3 = "Smashing Magazine";
-  static const String AWARDS_4 = "Entrepreneur";
-  static const String AWARDS_5 = "First Magazine";
-  static const String AWARDS_6 = "The Type Direction Club 60";
-  static const String AWARDS_7 = "ClassiCon-Brochure 2017";
-  static const String AWARDS_8 = "The Good Design Awards 2017";
-  static const String AWARDS_9 = "For Print Only-Under consideration";
-  static const String AWARDS_10 = "CI Magazine 2017";
+      "Production apps with real users, real challenges, real solutions.";
+  static const String AWARDS_TYPE_TITLE_1 = "Notable Achievements";
+  static const String AWARDS_TYPE_TITLE_2 = "OZi Lead (2026)";
+  static const String AWARDS_1 =
+      "Led OZi mobile team of 5 — promoted to Mobile Engineering Lead";
+  static const String AWARDS_2 =
+      "OZi: 99.8% crash-free sessions, 4.8★ (up from 4.2★), 1,237 commits";
+  static const String AWARDS_3 =
+      "HomeBloc: 2000-line monolith → 5 blocs (81% code reduction)";
+  static const String AWARDS_4 =
+      "Networking layer: 1,430-line class → 11 modular layers (179 files)";
+  static const String AWARDS_5 =
+      "Deeplink system overhaul — removed 2.7s from cold-start path";
+  static const String AWARDS_6 =
+      "Android cold start –500-900ms via pre-warmed Flutter engine";
+  static const String AWARDS_7 =
+      "Built CI/CD + Fastlane pipelines for Android & iOS (OZi)";
+  static const String AWARDS_8 =
+      "Shipped 6 production apps across fintech, health, ed-tech, commerce";
+  static const String AWARDS_9 =
+      "Phool Gobhi co-founder — custom video player with LRU caching";
+  static const String AWARDS_10 =
+      "Active open-source contributor (Flutter ecosystem)";
 
   //Brands Section
   static const String BRANDS_SECTION_TITLE = "Brands I've worked with";
   static const String HIRE_ME = "Hire me";
 
   //Testimonials Section
-  static const String MY_TESTIMONIALS = "my testimonials";
-  static const String TESTIMONIALS_SECTION_TITLE = "Client Testimonials";
-  static const String TESTIMONIALS_1_NAME = "Arnold Wilson";
-  static const String TESTIMONIALS_1_POSITION = "PHP Developer";
+  static const String MY_TESTIMONIALS = "what people say";
+  static const String TESTIMONIALS_SECTION_TITLE = "Real Feedback from Teams";
+  static const String TESTIMONIALS_1_NAME = "Coming Soon";
+  static const String TESTIMONIALS_1_POSITION =
+      "Will add verified testimonials here";
   static const String TESTIMONIALS_1 =
-      "Ameli has quickly become an indispensable partner in capturing the innovation in our products in a way that best represents our brand voice. She bring fresh ideas and challenges to the way our industry typically markets products. An integrated marketing campaign supporting a major 2015 product launch exceeded goals by as much as 300%.";
-  static const String TESTIMONIALS_2_NAME = "Ronald Green";
-  static const String TESTIMONIALS_2_POSITION = "UI Designer";
+      "I collect real feedback from the teams I work with. Want to collaborate? Let's build something great together.";
+  static const String TESTIMONIALS_2_NAME = "Contact me";
+  static const String TESTIMONIALS_2_POSITION = "me@rohitashwa.co.in";
   static const String TESTIMONIALS_2 =
-      "What a fantastic day it's been at Max Nimbus! Huge shoutout to the team for connecting us all and making this amazing event possible. She bring fresh ideas and challenges to the way our industry typically markets products. This year I brought friends. Come say hi! Development is one of our values & a theme of Max Nimbus talks.";
+      "Open to remote roles, contract work, and partnerships. If you're building a product that needs performance optimization or scalable architecture, let's talk.";
 
   //Blog Section
-  static const String MY_BLOG = "my blog";
-  static const String BLOG_SECTION_TITLE_1 = "Read My Own";
-  static const String BLOG_SECTION_TITLE_2 = "Blog. Be Trendy";
+  static const String MY_BLOG = "technical writing";
+  static const String BLOG_SECTION_TITLE_1 = "Performance & Architecture";
+  static const String BLOG_SECTION_TITLE_2 = "Articles Coming Soon";
   static const String BLOG_DESC =
-      "We met years ago at an advertising agency where we learned a ton of dos and some don'ts. There were project deadlines, happy hours, client proposals and a few sparks flying.";
-  static const String BLOG_VIEW_ALL = "View All";
-  static const String BLOG_CATEGORY_1 = "inspiration";
-  static const String BLOG_CATEGORY_2 = "design";
-  static const String BLOG_CATEGORY_3 = "creative";
-  static const String BLOG_DATE = "February 4, 2020";
-  static const String BLOG_TITLE_1 = "How Much Does a Website Cost to Build?";
-  static const String BLOG_TITLE_2 = "10 Tips How Create Best Packaging Design";
-  static const String BLOG_TITLE_3 = "How Get Your Visitors Love Your Brand";
-  static const String READ_MORE = "Read More";
-  static const String BLOGGING = "Blogging";
+      "I write about what I learn: Flutter performance optimization, mobile architecture patterns, real-time data sync. Coming soon to me.rohitashwa.co.in/blog";
+  static const String BLOG_VIEW_ALL = "Subscribe";
+  static const String BLOG_CATEGORY_1 = "performance";
+  static const String BLOG_CATEGORY_2 = "architecture";
+  static const String BLOG_CATEGORY_3 = "flutter";
+  static const String BLOG_DATE = "Coming 2026";
+  static const String BLOG_TITLE_1 =
+      "Building a Custom Media Player in Flutter";
+  static const String BLOG_TITLE_2 =
+      "LRU Cache Implementation for Video Streaming";
+  static const String BLOG_TITLE_3 =
+      "Reducing App Startup Time: A Technical Breakdown";
+  static const String READ_MORE = "Follow";
+  static const String BLOGGING = "Technical Writing";
 
   //Footer Section
   static const String LETS_TALK = "Let's Talk!";
@@ -282,4 +306,100 @@ class StringConst {
       "https://www.behance.net/gallery/95351691/Resume-Design-03";
   static const String CV_LINK =
       "https://drive.google.com/file/d/18L3Uhh9sSdVIeOHFfJpjOyOsIfZ8ahMK/view?usp=drive_link";
+
+  // OZi Team Impact — home page brief
+  static const String OZI_SECTION_LABEL = "team impact";
+  static const String OZI_SECTION_TITLE = "What We Shipped at OZi";
+  static const String OZI_SECTION_BODY =
+      "Dec 2025 – Present · Mobile Engineering Lead · Team of 5. Took OZi's mobile app from instability to 173K monthly active users and 1,000+ daily orders — while rebuilding the foundation and shipping features every sprint.";
+  static const String OZI_VIEW_CASE_STUDY = "View Full Case Study";
+
+  // Metric cards (brief + detail page)
+  static const String OZI_METRIC_DAU_VAL = "~12K";
+  static const String OZI_METRIC_DAU = "Daily Active Users";
+  static const String OZI_METRIC_MAU_VAL = "173K+";
+  static const String OZI_METRIC_MAU = "Monthly Active Users";
+  static const String OZI_METRIC_COLD_START_VAL = "52%";
+  static const String OZI_METRIC_COLD_START = "Cold Start Faster";
+  static const String OZI_METRIC_ORDERS_VAL = "25K+";
+  static const String OZI_METRIC_ORDERS = "Orders / 6 weeks";
+
+  // Detail page header
+  static const String OZI_DETAIL_TITLE = "OZi";
+  static const String OZI_DETAIL_SUBTITLE =
+      "Quick Commerce – Engineering Impact";
+  static const String OZI_DETAIL_ROLE = "Mobile Engineering Lead";
+  static const String OZI_DETAIL_PERIOD = "Dec 2025 – Present";
+  static const String OZI_DETAIL_TEAM_SIZE = "Team of 5 Engineers";
+  static const String OZI_DETAIL_PLATFORM = "Android · iOS · Flutter";
+
+  // Detail page section labels
+  static const String OZI_FEATURES_SECTION = "feature delivery";
+  static const String OZI_FEATURES_TITLE = "Features Shipped";
+  static const String OZI_ARCH_SECTION = "architecture";
+  static const String OZI_ARCH_TITLE = "Technical Wins";
+  static const String OZI_METRICS_SECTION = "firebase verified";
+  static const String OZI_METRICS_TITLE = "Live App Metrics";
+
+  // Feature table column headers
+  static const String OZI_COL_FEATURE = "Feature";
+  static const String OZI_COL_TIME = "Time to Ship";
+  static const String OZI_COL_QUALITY = "Quality";
+  static const String OZI_COL_IMPACT = "Business Impact";
+
+  // Business outcomes section (non-technical audience)
+  static const String OZI_BIZ_SECTION = "for business";
+  static const String OZI_BIZ_HEADING = "What This Meant for the Business";
+  static const String OZI_BIZ_1_HEADLINE = "App grew to 173K monthly users";
+  static const String OZI_BIZ_1_BODY =
+      "A stable, fast app is a growth multiplier. When we stopped fires and rebuilt the foundation, the product team could focus on acquiring users instead of fixing regressions. MAU went from low thousands to 173K under our watch.";
+  static const String OZI_BIZ_2_HEADLINE = "Daily orders up ~80% in 6 weeks";
+  static const String OZI_BIZ_2_BODY =
+      "Confirmed orders grew from ~550/day to 1,000+/day between April and May. Faster cold starts, fewer crashes at checkout, and features like Free Gifts and Scheduled Orders all contributed to more completed transactions.";
+  static const String OZI_BIZ_3_HEADLINE = "Rating improved: 4.2 → 4.8 stars";
+  static const String OZI_BIZ_3_BODY =
+      "Play Store rating directly drives organic installs. Every crash we fixed and every second we shaved off launch time translated into users leaving better reviews — and fewer uninstalls after a bad first experience.";
+  static const String OZI_BIZ_4_HEADLINE = "Team shipped without slowing down";
+  static const String OZI_BIZ_4_BODY =
+      "While rebuilding the architecture under the hood, we still delivered OOS handling, Free Gifts, and Scheduled Orders on schedule. The refactors made the next sprints faster, not slower.";
+
+  // Testimonials Section
+  static const String TESTIMONIALS = "testimonials";
+  static const String TESTIMONIALS_TITLE = "What Colleagues Say";
+  static const String TESTIMONIALS_DESC =
+      "Feedback from engineering leaders, product partners, and team members I've worked with.";
+
+  // Architecture Section
+  static const String ARCHITECTURE = "architecture";
+  static const String ARCHITECTURE_TITLE = "How I Build";
+  static const String ARCHITECTURE_DESC =
+      "Deep-dive into architectural decisions, design patterns, and scalability principles that drive my code.";
+
+  // Performance Metrics Section
+  static const String PERFORMANCE = "performance";
+  static const String PERFORMANCE_TITLE = "Metrics That Matter";
+  static const String PERFORMANCE_DESC =
+      "Real data from production apps: startup times, stability, user retention, team velocity.";
+  static const String PERFORMANCE_STARTUP = "App Startup Time";
+  static const String PERFORMANCE_STARTUP_BEFORE = "20-25s";
+  static const String PERFORMANCE_STARTUP_AFTER = "1.5s";
+  static const String PERFORMANCE_STARTUP_IMPROVEMENT = "94% Faster";
+  static const String PERFORMANCE_CRASHES = "Crash-Free Users";
+  static const String PERFORMANCE_CRASHES_VAL = "99.8%";
+  static const String PERFORMANCE_CRASHES_CONTEXT = "Android Production";
+  static const String PERFORMANCE_GROWTH = "Monthly Growth";
+  static const String PERFORMANCE_GROWTH_VAL = "173K MAU";
+  static const String PERFORMANCE_GROWTH_CONTEXT = "6 weeks";
+  static const String PERFORMANCE_RATING = "App Store Rating";
+  static const String PERFORMANCE_RATING_BEFORE = "4.2★";
+  static const String PERFORMANCE_RATING_AFTER = "4.8★";
+  static const String PERFORMANCE_RATING_IMPROVEMENT = "14% Increase";
+
+  // Articles/Blog Section
+  static const String ARTICLES = "articles";
+  static const String ARTICLES_TITLE = "Technical Writing";
+  static const String ARTICLES_DESC =
+      "Thoughts on mobile architecture, performance optimization, and team scaling.";
+  static const String ARTICLE_READ_MORE = "Read on Medium";
+  static const String ARTICLE_COMING_SOON = "Coming Soon";
 }

@@ -1,4 +1,3 @@
-import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
@@ -6,6 +5,7 @@ import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
 import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
+import 'package:nimbus/services/pdf_service.dart';
 import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -14,7 +14,7 @@ List<FooterItem> footerItems = [
   FooterItem(
     title: StringConst.PHONE_ME + ":",
     subtitle: StringConst.PHONE_NUMBER,
-    iconData: FeatherIcons.phone,
+    iconData: Icons.phone,
   ),
   FooterItem(
     title: StringConst.MAIL_ME + ":",
@@ -86,9 +86,8 @@ class _FooterSectionState extends State<FooterSection> {
                   TextSpan(
                     text: StringConst.FIRST_NAME,
                     style: footerTextStyle?.copyWith(
-                      decoration: TextDecoration.underline,
                       fontWeight: FontWeight.w900,
-                      color: AppColors.black,
+                      color: AppColors.blue300,
                     ),
                   ),
                 ],
@@ -112,9 +111,8 @@ class _FooterSectionState extends State<FooterSection> {
                           TextSpan(
                             text: StringConst.ROHITASHWA_SINGH + ". ",
                             style: footerTextStyle?.copyWith(
-                              decoration: TextDecoration.underline,
+                             color: AppColors.blue300,
                               fontWeight: FontWeight.w900,
-                              color: AppColors.black,
                             ),
                           ),
                         ],
@@ -143,10 +141,74 @@ class _FooterSectionState extends State<FooterSection> {
               SpaceW4(),
               Text(StringConst.WITH_LOVE, style: footerTextStyle),
               SpaceW4(),
-              Icon(
+              FaIcon(
                 FontAwesomeIcons.solidHeart,
                 color: AppColors.red,
                 size: Sizes.ICON_SIZE_12,
+              ),
+            ],
+          ),
+          SpaceH24(),
+          Divider(color: AppColors.primaryColor.withValues(alpha: 0.3)),
+          SpaceH20(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              /*Tooltip(
+                message: 'Download CV',
+                child: InkWell(
+                  onTap: () => PDFService.generateAndDownloadCV(),
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: AppColors.primaryColor.withValues(alpha: 0.1),
+                    ),
+                    child: FaIcon(
+                      FontAwesomeIcons.filePdf,
+                      color: AppColors.primaryColor,
+                      size: Sizes.ICON_SIZE_20,
+                    ),
+                  ),
+                ),
+              ),
+              SpaceW20(),*/
+              Tooltip(
+                message: 'GitHub Profile',
+                child: InkWell(
+                  onTap: () => openUrlLink(StringConst.GITHUB_URL, context),
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: AppColors.primaryColor.withValues(alpha:0.1),
+                    ),
+                    child: FaIcon(
+                      FontAwesomeIcons.github,
+                      color: AppColors.primaryColor,
+                      size: Sizes.ICON_SIZE_20,
+                    ),
+                  ),
+                ),
+              ),
+              SpaceW20(),
+              Tooltip(
+                message: 'LinkedIn Profile',
+                child: InkWell(
+                  onTap: () => openUrlLink(StringConst.LINKED_IN_URL, context),
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: AppColors.blue300.withOpacity(0.1),
+                    ),
+                    child: FaIcon(
+                      FontAwesomeIcons.linkedin,
+                      color: AppColors.blue300,
+                      size: Sizes.ICON_SIZE_20,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
@@ -323,18 +385,16 @@ class FooterItem extends StatelessWidget {
 
   final String title;
   final String subtitle;
-  final IconData iconData;
+  final Object iconData;
 
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
     return Column(
       children: [
-        Icon(
-          iconData,
-          color: AppColors.primaryColor,
-          size: Sizes.ICON_SIZE_36,
-        ),
+        iconData is FaIconData
+            ? FaIcon(iconData as FaIconData, color: AppColors.primaryColor, size: Sizes.ICON_SIZE_36)
+            : Icon(iconData as IconData, color: AppColors.primaryColor, size: Sizes.ICON_SIZE_36),
         SpaceH8(),
         Text(
           title,

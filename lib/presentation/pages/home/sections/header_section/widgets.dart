@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/widgets/buttons/social_button.dart';
 import 'package:nimbus/presentation/widgets/circular_container.dart';
@@ -60,7 +61,7 @@ class _HeaderImageState extends State<HeaderImage> {
   }
 }
 
-List<Widget> buildSocialIcons(List<SocialButtonData> socialItems) {
+List<Widget> buildSocialIcons(BuildContext context, List<SocialButtonData> socialItems) {
   List<Widget> items = [];
   for (int index = 0; index < socialItems.length; index++) {
     items.add(
@@ -74,11 +75,17 @@ List<Widget> buildSocialIcons(List<SocialButtonData> socialItems) {
       // ),
       NimBusLink(
         url: socialItems[index].url,
-        child: Icon(
-          socialItems[index].iconData,
-          color: AppColors.black,
-          size: Sizes.ICON_SIZE_18,
-        ),
+        child: socialItems[index].iconData is FaIconData
+            ? FaIcon(
+                socialItems[index].iconData as FaIconData,
+                color: Theme.of(context).iconTheme.color,
+                size: Sizes.ICON_SIZE_18,
+              )
+            : Icon(
+                socialItems[index].iconData as IconData,
+                color: Theme.of(context).iconTheme.color,
+                size: Sizes.ICON_SIZE_18,
+              ),
       ),
     );
     items.add(SpaceW20());

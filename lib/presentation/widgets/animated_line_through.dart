@@ -79,7 +79,6 @@ class _AnimatedLineThroughState extends State<AnimatedLineThrough>
 
   void _mouseEnter(bool hovering) {
     if (hovering) {
-
       setState(() {
         controller.forward();
         _isHovering = hovering;

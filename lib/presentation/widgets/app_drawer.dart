@@ -201,7 +201,7 @@ class _AppDrawerState extends State<AppDrawer> {
             SpaceW4(),
             Text(StringConst.WITH_LOVE, style: footerTextStyle),
             SpaceW4(),
-            Icon(
+            FaIcon(
               FontAwesomeIcons.solidHeart,
               color: AppColors.red,
               size: Sizes.ICON_SIZE_12,

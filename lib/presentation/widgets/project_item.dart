@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/utils/functions.dart';
+import 'package:nimbus/presentation/widgets/modals/project_detail_modal.dart';
 import 'package:nimbus/values/values.dart';
 
 class ProjectData {
+  final String projectId;
   final String projectCoverUrl;
   final String title;
   final String category;
@@ -15,6 +16,7 @@ class ProjectData {
   final String link;
 
   ProjectData({
+    required this.projectId,
     required this.projectCoverUrl,
     required this.title,
     required this.category,
@@ -29,6 +31,7 @@ class ProjectData {
 class ProjectItem extends StatefulWidget {
   const ProjectItem({
     Key? key,
+    required this.projectId,
     required this.title,
     required this.subtitle,
     required this.imageUrl,
@@ -42,6 +45,7 @@ class ProjectItem extends StatefulWidget {
     required this.link,
   }) : super(key: key);
 
+  final String projectId;
   final String title;
   final String subtitle;
   final TextStyle? titleStyle;
@@ -111,11 +115,19 @@ class _ProjectItemState extends State<ProjectItem>
 
   @override
   Widget build(BuildContext context) {
+    final details = Data.getProjectDetails(widget.projectId);
+
     return MouseRegion(
       onEnter: (e) => _mouseEnter(true),
       onExit: (e) => _mouseEnter(false),
       child: GestureDetector(
-        onTap: () => openUrlLink(widget.link, context),
+        onTap: () {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) =>
+                ProjectDetailModal(projectId: widget.projectId),
+          );
+        },
         child: Container(
           child: Stack(
             children: [
@@ -134,7 +146,7 @@ class _ProjectItemState extends State<ProjectItem>
                     child: ProjectCover(
                       animation: _indicatorAnimation,
                       color:
-                          widget.bannerColor ?? Colors.black.withOpacity(0.8),
+                          widget.bannerColor ?? Colors.black.withValues(alpha: 0.8),
                       width: widthOfScreen(context) / 9.5,
                       height: widget.bannerHeight ?? widget.height / 3,
                       title: widget.title,
@@ -146,6 +158,32 @@ class _ProjectItemState extends State<ProjectItem>
                   ),
                 ),
               ),
+              // Hover tooltip showing impact
+              if (_hovering && details != null)
+                Positioned(
+                  bottom: 60,
+                  left: 10,
+                  right: 10,
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: Colors.black87,
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Text(
+                      details.impact.isNotEmpty
+                          ? '✓ ${details.impact.first}'
+                          : '',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 11,
+                        height: 1.4,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ),
             ],
           ),
         ),
@@ -200,7 +238,7 @@ class ProjectCover extends StatelessWidget {
     return Container(
       width: widthOfScreen(context) / 9.5,
       height: height,
-      color: color ?? Colors.black.withOpacity(0.8),
+      color: color ?? Colors.black.withValues(alpha: 0.8),
       padding: EdgeInsets.symmetric(horizontal: 10),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

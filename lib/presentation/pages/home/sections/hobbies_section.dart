@@ -164,15 +164,13 @@ class _HobbiesSectionState extends State<HobbiesSection>
       title1: StringConst.HOBBIES_TITLE,
       hasTitle2: false,
       body: StringConst.HOBBIES_DESC,
-      child: Container(
-        child: Row(
-          children: [
-            _buildHobbies1(),
-            Spacer(),
-            _buildHobbies2(),
-            Spacer(flex: 4),
-          ],
-        ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Flexible(child: _buildHobbies1()),
+          const SizedBox(width: 48),
+          Flexible(child: _buildHobbies2()),
+        ],
       ),
     );
   }

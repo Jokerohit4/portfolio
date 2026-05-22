@@ -20,12 +20,14 @@ class TextWithBullet extends StatelessWidget {
       children: [
         Bullet(),
         spacing == null ? SpaceW16() : SizedBox(width: spacing),
-        Text(
-          text,
-          style: textStyle ??
-              textTheme.bodyLarge?.copyWith(
-                color: AppColors.primaryText2,
-              ),
+        Expanded(
+          child: Text(
+            text,
+            style: textStyle ??
+                textTheme.bodyLarge?.copyWith(
+                  color: AppColors.primaryText2,
+                ),
+          ),
         ),
       ],
     );

@@ -3,6 +3,7 @@ import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
 import 'package:nimbus/presentation/widgets/nimbus_info_section.dart';
 import 'package:nimbus/presentation/widgets/project_item.dart';
+import 'package:nimbus/presentation/widgets/pdf_export/portfolio_pdf_generator.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -40,7 +41,8 @@ class _ProjectsSectionState extends State<ProjectsSection>
     Data.realSol,
     Data.neodocs,
     Data.gmagica,
-    Data.personalProjects
+    Data.personalProjects,
+    Data.ozi,
   ];
   late List<ProjectData> selectedProject;
   late List<ProjectCategoryData> projectCategories;
@@ -107,11 +109,11 @@ class _ProjectsSectionState extends State<ProjectsSection>
                   children: [
                     _buildNimbusInfoSectionSm(),
                     SpaceH40(),
-                    // CvButton(
-                    //   buttonTitle: StringConst.ALL_PROJECTS,
-                    //   buttonColor: AppColors.primaryColor,
-                    //   onPressed: () {},
-                    // ),
+                    ElevatedButton.icon(
+                      onPressed: () => PortfolioPdfGenerator.generateAndShare(),
+                      icon: const Icon(Icons.download),
+                      label: const Text('Download Portfolio'),
+                    ),
                     SpaceH40(),
                     Wrap(
                       spacing: kSpacing,
@@ -153,7 +155,6 @@ class _ProjectsSectionState extends State<ProjectsSection>
                         children: [
                           ContentArea(
                             width: contentAreaWidth * 0.6,
-                            height: MediaQuery.of(context).size.height / 3.2,
                             child: _buildNimbusInfoSectionLg(),
                           ),
                           Spacer(),
@@ -201,10 +202,21 @@ class _ProjectsSectionState extends State<ProjectsSection>
       title1: StringConst.MEET_MY_PROJECTS,
       hasTitle2: false,
       body: StringConst.PROJECTS_DESC,
-      child: Wrap(
-        spacing: kSpacing,
-        runSpacing: kRunSpacing,
-        children: _buildProjectCategories(projectCategories),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ElevatedButton.icon(
+            onPressed: () => PortfolioPdfGenerator.generateAndShare(),
+            icon: const Icon(Icons.download),
+            label: const Text('Download Portfolio'),
+          ),
+          SpaceH24(),
+          Wrap(
+            spacing: kSpacing,
+            runSpacing: kRunSpacing,
+            children: _buildProjectCategories(projectCategories),
+          ),
+        ],
       ),
     );
   }
@@ -232,6 +244,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
         ScaleTransition(
           scale: _projectScaleAnimation,
           child: ProjectItem(
+            projectId: data[index].projectId,
             width: isMobile
                 ? assignWidth(context, data[index].mobileWidth)
                 : assignWidth(context, data[index].width),
@@ -279,7 +292,7 @@ class ProjectCategory extends StatefulWidget {
   ProjectCategory({
     required this.title,
     required this.number,
-    this.titleColor = AppColors.black,
+    this.titleColor,
     this.numberColor = Colors.transparent,
     this.hoverColor = AppColors.primaryColor,
     this.titleStyle,
@@ -289,7 +302,7 @@ class ProjectCategory extends StatefulWidget {
   });
 
   final String title;
-  final Color titleColor;
+  final Color? titleColor;
   final Color numberColor;
   final TextStyle? titleStyle;
   final int number;
@@ -311,7 +324,7 @@ class _ProjectCategoryState extends State<ProjectCategory>
   @override
   void initState() {
     super.initState();
-    color = widget.titleColor;
+    color = widget.titleColor ?? Colors.black;
     _controller = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: 450),
@@ -407,7 +420,7 @@ class _ProjectCategoryState extends State<ProjectCategory>
     } else if (widget.isSelected) {
       return widget.hoverColor;
     } else {
-      return widget.titleColor;
+      return widget.titleColor ?? Theme.of(context).colorScheme.onSurface;
     }
   }
 }
