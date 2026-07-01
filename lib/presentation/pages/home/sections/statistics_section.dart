@@ -173,7 +173,7 @@ class StatItem extends StatelessWidget {
   final AnimationController controller;
   final Curve curve;
 
-  late Animation<int> animation = IntTween(begin: 0, end: title).animate(
+  late final Animation<int> animation = IntTween(begin: 0, end: title).animate(
     CurvedAnimation(
       parent: controller,
       curve: curve,

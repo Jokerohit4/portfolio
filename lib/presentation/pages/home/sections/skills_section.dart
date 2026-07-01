@@ -177,8 +177,6 @@ class _SkillsSectionState extends State<SkillsSection>
     int crossAxisCount = 2,
     double? boxWidth,
   }) {
-    double invisibleBoxHeight = responsiveSize(context, 0, 10, md: 10, sm: 10);
-
     return MasonryGridView.count(
       crossAxisCount: crossAxisCount,
       mainAxisSpacing: kMainAxisSpacing,
