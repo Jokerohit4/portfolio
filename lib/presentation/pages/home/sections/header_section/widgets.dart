@@ -138,28 +138,24 @@ List<Widget> buildCardRow({
           backgroundColor: data[index].circleBgColor,
           iconColor: data[index].leadingIconColor,
         ),
-        title: Flexible(
-          child: SelectableText(
-            data[index].title,
-            style: textTheme.labelLarge?.copyWith(
-              fontSize: responsiveSize(
-                context,
-                Sizes.TEXT_SIZE_16,
-                Sizes.TEXT_SIZE_18,
-              ),
+        title: SelectableText(
+          data[index].title,
+          style: textTheme.labelLarge?.copyWith(
+            fontSize: responsiveSize(
+              context,
+              Sizes.TEXT_SIZE_16,
+              Sizes.TEXT_SIZE_18,
             ),
           ),
         ),
-        subtitle: Flexible(
-          child: SelectableText(
-            data[index].subtitle,
-            style: textTheme.bodyLarge?.copyWith(
-                fontSize: responsiveSize(
-              context,
-              Sizes.TEXT_SIZE_14,
-              Sizes.TEXT_SIZE_16,
-            )),
-          ),
+        subtitle: SelectableText(
+          data[index].subtitle,
+          style: textTheme.bodyLarge?.copyWith(
+              fontSize: responsiveSize(
+            context,
+            Sizes.TEXT_SIZE_14,
+            Sizes.TEXT_SIZE_16,
+          )),
         ),
         trailing: Icon(
           Icons.chevron_right,

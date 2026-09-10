@@ -128,28 +128,29 @@ class _NimBusCardState extends State<NimBusCard>
           elevation: widget.elevation,
           child: Padding(
             padding: widget.padding,
+            // No Spacers around the leading icon: they used to take two
+            // thirds of the row, leaving the text a box narrower than a
+            // single long word like "High-performance", which then could not
+            // wrap and spilled out of the card.
             child: Row(
-              mainAxisAlignment: widget.rowMainAxisAlignment,
-              crossAxisAlignment: widget.rowCrossAxisAlignment,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                widget.leading != null ? Spacer() : Empty(),
-                widget.leading ?? Empty(),
-                widget.leading != null ? Spacer() : Empty(),
-                Column(
-                  mainAxisAlignment: widget.columnMainAxisAlignment,
-                  crossAxisAlignment: widget.columnCrossAxisAlignment,
-                  children: [
-                    Spacer(),
-                    widget.title ?? Empty(),
-                    widget.title != null ? SpaceH8() : Empty(),
-                    widget.subtitle ?? Empty(),
-                    Spacer(),
-                  ],
+                if (widget.leading != null) ...[
+                  widget.leading!,
+                  SpaceW16(),
+                ],
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      widget.title ?? Empty(),
+                      widget.title != null ? SpaceH8() : Empty(),
+                      widget.subtitle ?? Empty(),
+                    ],
+                  ),
                 ),
-                Spacer(),
-                // widget.trailing != null ? Spacer() : Empty(),
-                // widget.trailing ?? Empty(),
-                // widget.trailing != null ? Spacer() : Empty(),///TODO : COMMENT
               ],
             ),
           ),

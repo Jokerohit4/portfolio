@@ -157,7 +157,9 @@ class _AboutMeSectionState extends State<AboutMeSection>
 
   Widget _buildImage({required double width, required double height}) {
     TextTheme textTheme = Theme.of(context).textTheme;
-    double fontSize = responsiveSize(context, 60, 72, md: 64);
+    // 60px ran "There!" off the right edge of the photo on phones.
+    double fontSize = responsiveSize(context, 38, 72, md: 64);
+    double greetingLeftFactor = responsiveSize(context, 0.42, 0.63, md: 0.55);
     TextStyle? titleStyle = textTheme.bodyLarge?.merge(
       Styles.customTextStyle3(fontSize: fontSize, height: 1.25),
     );
@@ -208,7 +210,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
         ),
         Positioned(
           top: width * 0.2,
-          left: width * 0.63,
+          left: width * greetingLeftFactor,
           child: FadeTransition(
             opacity: _fadeInAnimation,
             child: Column(

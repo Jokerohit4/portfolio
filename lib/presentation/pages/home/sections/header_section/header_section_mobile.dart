@@ -8,265 +8,152 @@ import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-const double bodyTextSizeLg = 16.0;
 const double bodyTextSizeSm = 14.0;
-const double socialTextSizeLg = 18.0;
 const double socialTextSizeSm = 14.0;
 const double sidePadding = Sizes.PADDING_16;
 
-class HeaderSectionMobile extends StatefulWidget {
+/// Mobile header.
+///
+/// The decorative rotating globe and the offset portrait used to sit in a
+/// Stack *behind* this text. At phone widths they overlapped the paragraph
+/// and made it unreadable, and the portrait only ever showed as a clipped
+/// sliver, so on mobile the header is now a plain vertical stack.
+class HeaderSectionMobile extends StatelessWidget {
   const HeaderSectionMobile({Key? key}) : super(key: key);
 
   @override
-  _HeaderSectionMobileState createState() => _HeaderSectionMobileState();
-}
-
-class _HeaderSectionMobileState extends State<HeaderSectionMobile>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      duration: const Duration(seconds: 20),
-      vsync: this,
-    )..repeat();
-
-    _controller.forward();
-    _controller.addListener(() {
-      if (_controller.status == AnimationStatus.completed) {
-        _controller.reset();
-        _controller.forward();
-      }
-    });
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    TextTheme textTheme = Theme.of(context).textTheme;
-    double headerIntroTextSize = Sizes.TEXT_SIZE_24;
-    double screenWidth = widthOfScreen(context) - (sidePadding * 2);
-    double contentAreaWidth = screenWidth;
-    TextStyle? bodyTextStyle =
+    final TextTheme textTheme = Theme.of(context).textTheme;
+    final double headerIntroTextSize = Sizes.TEXT_SIZE_24;
+    final double contentWidth = widthOfScreen(context) - (sidePadding * 2);
+
+    final TextStyle? bodyTextStyle =
         textTheme.bodyLarge?.copyWith(fontSize: bodyTextSizeSm);
-    TextStyle? socialTitleStyle =
+    final TextStyle? socialTitleStyle =
         textTheme.labelLarge?.copyWith(fontSize: socialTextSizeSm);
 
-    double buttonWidth = 80;
-    double buttonHeight = 48;
-
-    double sizeOfBlobSm = screenWidth * 0.4;
-    double sizeOfGoldenGlobe = screenWidth * 0.3;
-    double dottedGoldenGlobeOffset = sizeOfBlobSm * 0.4;
-    double heightOfBlobAndGlobe =
-        computeHeight(dottedGoldenGlobeOffset, sizeOfGoldenGlobe, sizeOfBlobSm);
-    double heightOfStack = heightOfBlobAndGlobe * 2;
-    double blobOffset = heightOfStack * 0.3;
     return ContentArea(
-      child: Stack(
-        children: [
-          Container(
-            height: heightOfStack,
-            child: Stack(
-              children: [
-                Stack(
-                  children: [
-                    Positioned(
-                      left: -(sizeOfGoldenGlobe / 3),
-                      top: blobOffset + dottedGoldenGlobeOffset,
-                      child: RotationTransition(
-                        turns: _controller,
-                        child: Image.asset(
-                          ImagePath.DOTS_GLOBE_YELLOW,
-                          width: sizeOfGoldenGlobe,
-                          height: sizeOfGoldenGlobe,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Positioned(
-                  right: -(sizeOfBlobSm),
-                  child: HeaderImage(
-                    controller: _controller,
-                    globeSize: sizeOfGoldenGlobe,
-                    imageHeight: heightOfStack,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: sidePadding),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SpaceH40(),
+            AvailabilityBadge(fontSize: 12.0),
+            SpaceH20(),
+            AnimatedTextKit(
+              animatedTexts: [
+                TypewriterAnimatedText(
+                  StringConst.INTRO,
+                  speed: const Duration(milliseconds: 60),
+                  textStyle: textTheme.displayMedium?.copyWith(
+                    fontSize: headerIntroTextSize,
                   ),
                 ),
               ],
+              onTap: () {},
+              isRepeatingAnimation: true,
+              totalRepeatCount: 5,
             ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Stack(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(top: heightOfStack * 0.1),
-                    child: SelectableText(
-                      "",
-                      style: textTheme.displayLarge?.copyWith(
-                        color: AppColors.grey50,
-                        fontSize: headerIntroTextSize * 2.5,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: sidePadding),
-                    margin: EdgeInsets.only(top: heightOfStack * 0.3),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            AvailabilityBadge(fontSize: 12.0),
-                            SpaceH16(),
-                            ConstrainedBox(
-                              constraints:
-                                  BoxConstraints(maxWidth: screenWidth),
-                              child: AnimatedTextKit(
-                                animatedTexts: [
-                                  TypewriterAnimatedText(
-                                    StringConst.INTRO,
-                                    speed: Duration(milliseconds: 60),
-                                    textStyle:
-                                        textTheme.displayMedium?.copyWith(
-                                      fontSize: headerIntroTextSize,
-                                    ),
-                                  ),
-                                ],
-                                onTap: () {},
-                                isRepeatingAnimation: true,
-                                totalRepeatCount: 5,
-                              ),
-                            ),
-                            ConstrainedBox(
-                              constraints:
-                                  BoxConstraints(maxWidth: screenWidth),
-                              child: AnimatedTextKit(
-                                animatedTexts: [
-                                  TypewriterAnimatedText(
-                                    StringConst.POSITION,
-                                    speed: Duration(milliseconds: 80),
-                                    textStyle:
-                                        textTheme.displayMedium?.copyWith(
-                                      fontSize: headerIntroTextSize,
-                                      color: AppColors.primaryColor,
-                                      height: 1.2,
-                                    ),
-                                  ),
-                                ],
-                                onTap: () {},
-                                isRepeatingAnimation: true,
-                                totalRepeatCount: 5,
-                              ),
-                            ),
-                            SpaceH16(),
-                            ConstrainedBox(
-                              constraints:
-                                  BoxConstraints(maxWidth: screenWidth * 0.5),
-                              child: SelectableText(
-                                StringConst.ABOUT_DEV,
-                                style: bodyTextStyle?.copyWith(
-                                  height: 1.5,
-                                  // color: AppColors.black,
-                                ),
-                              ),
-                            ),
-                            SpaceH30(),
-                            Wrap(
-                              // mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    SelectableText(
-                                      "${StringConst.EMAIL}:",
-                                      style: socialTitleStyle,
-                                    ),
-                                    SpaceH8(),
-                                    SelectableText(
-                                      "${StringConst.DEV_EMAIL_2}",
-                                      style: bodyTextStyle,
-                                    ),
-                                  ],
-                                ),
-                                SpaceW16(),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    SelectableText(
-                                      "${StringConst.PHONE_NUMBER}:",
-                                      style: socialTitleStyle,
-                                    ),
-                                    SpaceH8(),
-                                    SelectableText(
-                                      "${StringConst.PHONE_ME}",
-                                      style: bodyTextStyle,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            SpaceH40(),
-                            Row(
-                              children: [
-                                CvButton(
-                                  width: buttonWidth,
-                                  height: buttonHeight,
-                                  buttonTitle: StringConst.DOWNLOAD_CV,
-                                  onPressed: () {
-                                    launchUrl(Uri.parse(StringConst.CV_LINK));
-                                  },
-                                ),
-                                SpaceW16(),
-                                CvButton(
-                                  width: buttonWidth,
-                                  height: buttonHeight,
-                                  buttonTitle: StringConst.HIRE_ME_NOW,
-                                  onPressed: () {},
-                                ),
-                              ],
-                            ),
-                            SpaceH30(),
-                            Wrap(
-                              children: buildSocialIcons(context, Data.socialData),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              SpaceH40(),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: sidePadding,
-                ),
-                child: Column(
-                  children: buildCardRow(
-                    context: context,
-                    data: Data.nimbusCardData,
-                    width: contentAreaWidth,
-                    isHorizontal: false,
-                    hasAnimation: false,
+            AnimatedTextKit(
+              animatedTexts: [
+                TypewriterAnimatedText(
+                  StringConst.POSITION,
+                  speed: const Duration(milliseconds: 80),
+                  textStyle: textTheme.displayMedium?.copyWith(
+                    fontSize: headerIntroTextSize,
+                    color: AppColors.primaryColor,
+                    height: 1.2,
                   ),
                 ),
+              ],
+              onTap: () {},
+              isRepeatingAnimation: true,
+              totalRepeatCount: 5,
+            ),
+            SpaceH20(),
+            SelectableText(
+              StringConst.ABOUT_DEV,
+              style: bodyTextStyle?.copyWith(height: 1.6),
+            ),
+            SpaceH30(),
+            Wrap(
+              spacing: 28,
+              runSpacing: 16,
+              children: [
+                _contactPair(
+                  label: "${StringConst.EMAIL}:",
+                  value: StringConst.DEV_EMAIL_2,
+                  labelStyle: socialTitleStyle,
+                  valueStyle: bodyTextStyle,
+                ),
+                _contactPair(
+                  label: "${StringConst.PHONE_ME}:",
+                  value: StringConst.PHONE_NUMBER,
+                  labelStyle: socialTitleStyle,
+                  valueStyle: bodyTextStyle,
+                ),
+              ],
+            ),
+            SpaceH36(),
+            Wrap(
+              spacing: 16,
+              runSpacing: 12,
+              children: [
+                CvButton(
+                  width: 150,
+                  height: 48,
+                  buttonTitle: StringConst.DOWNLOAD_CV,
+                  onPressed: () {
+                    launchUrl(Uri.parse(StringConst.CV_LINK));
+                  },
+                ),
+                CvButton(
+                  width: 150,
+                  height: 48,
+                  buttonTitle: StringConst.HIRE_ME_NOW,
+                  opensUrl: true,
+                  url: StringConst.EMAIL_URL,
+                ),
+              ],
+            ),
+            SpaceH30(),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: buildSocialIcons(context, Data.socialData),
+            ),
+            SpaceH40(),
+            Column(
+              children: buildCardRow(
+                context: context,
+                data: Data.nimbusCardData,
+                width: contentWidth,
+                isHorizontal: false,
+                hasAnimation: false,
               ),
-            ],
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
+    );
+  }
+
+  Widget _contactPair({
+    required String label,
+    required String value,
+    required TextStyle? labelStyle,
+    required TextStyle? valueStyle,
+  }) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        SelectableText(label, style: labelStyle),
+        SpaceH8(),
+        SelectableText(value, style: valueStyle),
+      ],
     );
   }
 }
