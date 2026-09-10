@@ -128,6 +128,8 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisSize: MainAxisSize.min,
                           children: [
+                            AvailabilityBadge(fontSize: 12.0),
+                            SpaceH16(),
                             ConstrainedBox(
                               constraints:
                                   BoxConstraints(maxWidth: screenWidth),

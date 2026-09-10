@@ -134,4 +134,9 @@ class ImagePath {
   static const String OZI_USER_ONE = "$screenshotsDir/${ozi}_01.png";
   static const String OZI_USER_TWO = "$screenshotsDir/${ozi}_02.png";
   static const String OZI_USER_THREE = "$screenshotsDir/${ozi}_03.png";
+
+  ///PHOOL GOBHI
+  static const String phoolGobhi = "PHOOL_GOBHI";
+  static const String PHOOL_GOBHI_ONE = "$screenshotsDir/${phoolGobhi}_01.jpg";
+  static const String PHOOL_GOBHI_TWO = "$screenshotsDir/${phoolGobhi}_02.jpg";
 }

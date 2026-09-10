@@ -231,7 +231,7 @@ class Data {
   ];
   static List<StatItemData> statItemsData = [
     StatItemData(value: 6, subtitle: StringConst.HAPPY_CLIENTS),
-    StatItemData(value: 5, subtitle: StringConst.YEARS_OF_EXPERIENCE),
+    StatItemData(value: 6, subtitle: StringConst.YEARS_OF_EXPERIENCE),
     StatItemData(value: 23, subtitle: StringConst.INCREDIBLE_PROJECTS),
   ];
 
@@ -245,6 +245,8 @@ class Data {
     ProjectCategoryData(
         title: StringConst.PERSONAL_PROJECTS, number: personalProjects.length),
     ProjectCategoryData(title: StringConst.OZI, number: ozi.length),
+    ProjectCategoryData(
+        title: StringConst.PHOOL_GOBHI, number: phoolGobhi.length),
   ];
 
   static List<String> hobbies1 = [
@@ -324,18 +326,26 @@ class Data {
     ),
   ];
 
-  // TODO: Add Phool Gobhi project showcase
-  // static List<ProjectData> phoolGobhiShowcase = [
-  //   ProjectData(
-  //     title: "Phool Gobhi: Short-Form Video App",
-  //     category: "Featured",
-  //     projectCoverUrl: "assets/images/phool_gobhi_hero.png", // TODO: add hero image
-  //     width: 1.0,
-  //     link: "https://phoolgobi.com", // Update with actual link
-  //   ),
-  // ];
-
   static List<ProjectData> allProjects = [
+    // Current work leads the grid.
+    ProjectData(
+      projectId: 'phool_gobhi_customer',
+      title: StringConst.PHOOL_GOBHI_CUSTOMER_APP,
+      category: StringConst.PHOOL_GOBHI,
+      projectCoverUrl: ImagePath.PHOOL_GOBHI_ONE,
+      width: 0.3,
+      mobileHeight: 0.3,
+      link: StringConst.PHOOL_GOBHI_LINK,
+    ),
+    ProjectData(
+      projectId: 'phool_gobhi_customer',
+      title: StringConst.PHOOL_GOBHI_CUSTOMER_APP,
+      category: StringConst.PHOOL_GOBHI,
+      projectCoverUrl: ImagePath.PHOOL_GOBHI_TWO,
+      width: 0.3,
+      mobileHeight: 0.3,
+      link: StringConst.PHOOL_GOBHI_LINK,
+    ),
     ProjectData(
       projectId: 'partner_v1',
       title: StringConst.PARTNER_WIOM_V1,
@@ -765,6 +775,27 @@ class Data {
     ),
   ];
 
+  static List<ProjectData> phoolGobhi = [
+    ProjectData(
+      projectId: 'phool_gobhi_customer',
+      title: StringConst.PHOOL_GOBHI_CUSTOMER_APP,
+      category: StringConst.PHOOL_GOBHI,
+      projectCoverUrl: ImagePath.PHOOL_GOBHI_ONE,
+      width: 0.3,
+      mobileHeight: 0.3,
+      link: StringConst.PHOOL_GOBHI_LINK,
+    ),
+    ProjectData(
+      projectId: 'phool_gobhi_customer',
+      title: StringConst.PHOOL_GOBHI_CUSTOMER_APP,
+      category: StringConst.PHOOL_GOBHI,
+      projectCoverUrl: ImagePath.PHOOL_GOBHI_TWO,
+      width: 0.3,
+      mobileHeight: 0.3,
+      link: StringConst.PHOOL_GOBHI_LINK,
+    ),
+  ];
+
   static const List<OziFeatureData> oziFeatures = [
     OziFeatureData(
       feature: "Android Cold Start Optimization",
@@ -813,7 +844,7 @@ class Data {
       feature: "App Stability Drive (lead initiative)",
       timeToDeliver: "4 months (ongoing)",
       quality: "New versions (v1.7+) essentially crash-free in production",
-      impact: "4.2★ → 4.8★ Play Store rating; 173K MAU",
+      impact: "3.8★ → 4.8★ Play Store rating; 173K MAU",
     ),
   ];
 
@@ -1092,8 +1123,8 @@ class Data {
     'ozi_user_app': ProjectDetailData(
       projectId: 'ozi_user_app',
       title: 'OZi User App',
-      company: 'OZi (Current)',
-      shortDescription: 'Leading quick-commerce app from 4.2★ to 4.8★ with 99.8% crash-free sessions',
+      company: 'OZi',
+      shortDescription: 'Leading quick-commerce app from 3.8★ to 4.8★ with 99.8% crash-free sessions',
       detailedDescription: 'As Mobile Engineering Lead at OZi, led a team of 5 to transform the app. Drove 1,237+ commits in 4 months, architected major refactors, implemented critical performance optimizations, and established stability frameworks. The app serves 173K MAU with consistently high performance.',
       keyFeatures: [
         'Order booking and tracking',
@@ -1104,7 +1135,7 @@ class Data {
         'Scheduled order capabilities',
       ],
       impact: [
-        'App rating: 4.2★ → 4.8★ Play Store',
+        'App rating: 3.8★ → 4.8★ Play Store',
         'Crash-free users: 99.8%',
         'Monthly Active Users: 173K+',
         'Cold start optimization: 52% faster (620ms → 295ms)',
@@ -1115,6 +1146,43 @@ class Data {
       technologies: ['Flutter', 'Dart', 'Bloc architecture', 'Firebase Performance', 'Advanced state management'],
       downloadLink: 'https://play.google.com/store/apps/details?id=com.ozi.user',
     ),
+    'phool_gobhi_customer': ProjectDetailData(
+      projectId: 'phool_gobhi_customer',
+      title: 'Phool Gobhi',
+      company: 'Founder & Principal Engineer',
+      shortDescription:
+          'Pay-per-session gym booking platform — mobile, backend and web, built solo and running in production',
+      detailedDescription:
+          'A consumer fitness marketplace built end to end: two Flutter apps (customer and partner), five Node/Express microservices behind an API gateway on GCP Cloud Run, and three Next.js frontends. Covers auth, payments, bookings, check-in and analytics — designed, built, deployed and operated solo.',
+      keyFeatures: [
+        'Gym discovery with location and amenity filters',
+        'Per-session slot booking with live availability',
+        'Wallet payments and top-ups via Razorpay',
+        'Signed QR check-in with geofence verification',
+        'Gym-buddy matching, chat and streaks',
+        'Partner dashboard with earnings and attendance',
+      ],
+      impact: [
+        'Six repositories shipped and deployed',
+        'Five Node microservices on GCP Cloud Run',
+        'PostgreSQL with Prisma, isolated per service',
+        'JWT auth with rotating refresh tokens across web and mobile',
+        'CI/CD with per-service change detection and migration gating',
+        'First-party analytics pipeline with funnel dashboards',
+      ],
+      technologies: [
+        'Flutter',
+        'Node.js',
+        'Express',
+        'PostgreSQL',
+        'Prisma',
+        'Next.js',
+        'GCP Cloud Run',
+        'Razorpay',
+        'Firebase',
+      ],
+      downloadLink: 'https://www.phoolgobhi.com',
+    ),
   };
 
   // Helper function to get project details by ID
@@ -1123,12 +1191,6 @@ class Data {
   }
 
   static List<TestimonialData> testimonials = [
-    TestimonialData(
-      name: 'Prateek Suraj',
-      role: 'Head of Engineering',
-      company: 'OZi',
-      quote: 'Rohitashwa led the team to 99.8% crash-free sessions and a 4.8★ rating. His architecture decisions scaled beautifully, and his mentorship elevated the entire team.',
-    ),
     TestimonialData(
       name: 'Saurabh Goyal',
       role: 'Engineering Manager',

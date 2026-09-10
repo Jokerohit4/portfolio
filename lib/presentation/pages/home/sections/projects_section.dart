@@ -35,6 +35,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
     with SingleTickerProviderStateMixin {
   late AnimationController _projectController;
   late Animation<double> _projectScaleAnimation;
+  // Index-matched to Data.projectCategories — keep the two in the same order.
   List<List<ProjectData>> projects = [
     Data.allProjects,
     Data.wiom,
@@ -43,6 +44,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
     Data.gmagica,
     Data.personalProjects,
     Data.ozi,
+    Data.phoolGobhi,
   ];
   late List<ProjectData> selectedProject;
   late List<ProjectCategoryData> projectCategories;

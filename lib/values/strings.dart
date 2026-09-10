@@ -24,12 +24,13 @@ class StringConst {
   static const String LAST_NAME = "Singh";
   static const String INTRO = "Hi! I'm Rohitashwa Singh";
   static const String POSITION = "Mobile Engineering Lead";
+  static const String AVAILABILITY_BADGE = "Available for contract work";
   static const String ABOUT_ME_INTRO =
-      "I lead mobile engineering teams and build high-performance Flutter apps. Currently Mobile Lead at OZi (quick-commerce), managing a team of 5 and driving the app from 4.2★ to 4.8★ with 99.8% crash-free sessions.";
+      "I lead mobile engineering teams and build high-performance Flutter apps. Most recently Mobile Engineering Lead at OZi (quick-commerce), where I managed a team of 5 and drove the app from 3.8★ to 4.8★ with 99.8% crash-free sessions.";
   static const String ABOUT_ME_DETAILS =
-      "Over 6 years, I’ve shipped production apps from zero to scale. Currently Mobile Engineering Lead at OZi—led a team of 5 to 99.8% crash-free sessions, 4.8★ rating (up from 4.2★), and 1,237+ commits in 4 months. I work independently and async—ideal for remote teams.";
+      "Over 6 years, I’ve shipped production apps from zero to scale. At OZi I led a team of 5 to 99.8% crash-free sessions, a 4.8★ rating (up from 3.8★), and 1,237+ commits in 4 months. I now take on contract engagements while building my own platform end to end. I work independently and async—ideal for remote teams.";
   static const String ABOUT_DEV =
-      "Mobile Engineering Lead (5+ years experience in Flutter) at OZi. Leads a team of 5, specializing in architecture, performance, and scalable app delivery. Available for remote work.";
+      "I fix mobile apps that crash, lag, or lose their store rating — and I can prove it. Six years across Flutter, Android and iOS, most recently leading a team of 5 on a quick-commerce app at 173K monthly actives. Available for remote contract work.";
   static const String ABOUT_ME_1 = "I focus on one thing:";
   static const String ABOUT_ME_2 =
       "Building fast, scalable mobile apps that users love.";
@@ -44,9 +45,9 @@ class StringConst {
   static const String JOB_ROLE = "Flutter Expert";
   static const String MOBILE_DESC = "High-performance mobile apps";
   static const String DESIGNER = "Startup Builder";
-  static const String DESIGNER_DESC = "Leading OZi mobile team of 5";
+  static const String DESIGNER_DESC = "Building my own platform end to end";
   static const String FREELANCER = "Remote-First";
-  static const String FREELANCER_DESC = "Available for contracts";
+  static const String FREELANCER_DESC = "Contract & fractional, remote";
 
   static const String FLUTTER = "Flutter";
   static const String JAVA = "Java";
@@ -60,7 +61,7 @@ class StringConst {
   static const String THERE = "There!";
   static const String ABOUT_ME = "about me";
   static const String ABOUT_ME_DESC =
-      "Currently Mobile Engineering Lead at OZi (quick-commerce), leading a team of 5. Previously shipped production apps for WIOM (D2C- internet), Real Solutions (ed-tech), Neodocs (health), and Gmagica. I optimize for latency, memory, and user retention. Open to remote roles that value clean code and product thinking.";
+      "Most recently Mobile Engineering Lead at OZi (quick-commerce), leading a team of 5. Before that I shipped production apps for WIOM (D2C internet), Real Solutions (ed-tech), Neodocs (health), and Gmagica. I optimize for latency, memory, and user retention. Currently available for remote contract work — performance rescue, Flutter delivery, and fractional mobile leadership.";
   static const String ABOUT_ME_DESC_1 = "What I do:";
   static const String ABOUT_ME_DESC_2 =
       "I write production-grade Flutter code.";
@@ -80,7 +81,7 @@ class StringConst {
   static const String SKILLS_TITLE_1 = "What I'm";
   static const String SKILLS_TITLE_2 = "Really Good At";
   static const String SKILLS_DESC =
-      "5 years of shipping production apps. I specialize in mobile performance, real-time data, custom media handling, and clean architecture at scale.";
+      "Six years of shipping production apps. I specialize in mobile performance, crash and stability work, offline-first architecture, and clean architecture at scale.";
   static const String TOOLS_1_NAME = "Performance Optimization";
   static const String TOOLS_1_PROFICIENCY = "Advanced";
   static const String TOOLS_2_NAME = "Architecture & Design Patterns";
@@ -109,7 +110,7 @@ class StringConst {
   static const String HAPPY_CLIENTS = "Companies I've Worked With";
   static const String HAPPY_CLIENTS_NUM = "6";
   static const String YEARS_OF_EXPERIENCE = "Years Shipping Production";
-  static const String YEARS_OF_EXPERIENCE_NUM = "5+";
+  static const String YEARS_OF_EXPERIENCE_NUM = "6";
   static const String INCREDIBLE_PROJECTS = "Apps Built & Optimized";
   static const String INCREDIBLE_PROJECTS_NUM = "13";
   static const String AWARD_WINNING = "Passionate About Quality";
@@ -182,10 +183,12 @@ class StringConst {
   // Featured Project
   static const String PHOOL_GOBHI = "Phool Gobhi";
   static const String PHOOL_GOBHI_SUBTITLE =
-      "Short-Form Video App for Creators";
+      "Pay-Per-Session Fitness Platform";
   static const String PHOOL_GOBHI_DESC =
-      "A high-performance short-form video platform built with Flutter. Features: custom media player with LRU caching, real-time streaming optimization, platform-specific UI (iOS/Android). Built from zero to MVP focusing on video playback performance and memory efficiency. Open to feedback and partnerships.";
-  static const String PHOOL_GOBHI_LINK = "https://phoolgobi.com";
+      "A pay-per-session gym booking platform, built end to end and running in production. Two Flutter apps (customer and partner), five Node/Express microservices behind an API gateway on GCP Cloud Run, three Next.js frontends. Wallet payments via Razorpay, JWT auth with rotating refresh tokens shared across web and mobile, signed QR check-in with geofencing, and a first-party analytics pipeline. Built solo.";
+  static const String PHOOL_GOBHI_LINK = "https://www.phoolgobhi.com";
+  static const String PHOOL_GOBHI_CUSTOMER_APP =
+      "Phool Gobhi – Gym Session Booking";
   static const String PORTFOLIO_4_TITLE = "3D Animation";
   static const String PORTFOLIO_5_TITLE = "Collect Idea";
   static const String PORTFOLIO_6_TITLE = "Company Branding";
@@ -202,9 +205,9 @@ class StringConst {
   static const String HOBBY_3 = "System Design";
   static const String HOBBY_4 = "Technical Mentorship";
   static const String HOBBY_5 = "Open Source (Flutter)";
-  static const String HOBBY_6 = "Creator Economy Tech";
+  static const String HOBBY_6 = "Crash & Stability Engineering";
   static const String HOBBY_7 = "Real-time Systems";
-  static const String HOBBY_8 = "Media Technology";
+  static const String HOBBY_8 = "Backend & Infrastructure";
   static const String HOBBY_9 = "Startup Scaling";
   static const String HOBBY_10 = "Clean Architecture Patterns";
 
@@ -220,7 +223,7 @@ class StringConst {
   static const String AWARDS_1 =
       "Led OZi mobile team of 5 — promoted to Mobile Engineering Lead";
   static const String AWARDS_2 =
-      "OZi: 99.8% crash-free sessions, 4.8★ (up from 4.2★), 1,237 commits";
+      "OZi: 99.8% crash-free sessions, 4.8★ (up from 3.8★), 1,237 commits";
   static const String AWARDS_3 =
       "HomeBloc: 2000-line monolith → 5 blocs (81% code reduction)";
   static const String AWARDS_4 =
@@ -234,7 +237,7 @@ class StringConst {
   static const String AWARDS_8 =
       "Shipped 6 production apps across fintech, health, ed-tech, commerce";
   static const String AWARDS_9 =
-      "Phool Gobhi co-founder — custom video player with LRU caching";
+      "Phool Gobhi founder — 6-repo platform built solo, live in production";
   static const String AWARDS_10 =
       "Active open-source contributor (Flutter ecosystem)";
 
@@ -253,14 +256,14 @@ class StringConst {
   static const String TESTIMONIALS_2_NAME = "Contact me";
   static const String TESTIMONIALS_2_POSITION = "me@rohitashwa.co.in";
   static const String TESTIMONIALS_2 =
-      "Open to remote roles, contract work, and partnerships. If you're building a product that needs performance optimization or scalable architecture, let's talk.";
+      "Available for remote contract work — performance and crash rescue, Flutter delivery, or fractional mobile leadership. If your app is slow, crashing, or losing its rating, let's talk.";
 
   //Blog Section
   static const String MY_BLOG = "technical writing";
   static const String BLOG_SECTION_TITLE_1 = "Performance & Architecture";
   static const String BLOG_SECTION_TITLE_2 = "Articles Coming Soon";
   static const String BLOG_DESC =
-      "I write about what I learn: Flutter performance optimization, mobile architecture patterns, real-time data sync. Coming soon to me.rohitashwa.co.in/blog";
+      "I write about what I learn: Flutter performance optimization, mobile architecture patterns, and crash classification at scale.";
   static const String BLOG_VIEW_ALL = "Subscribe";
   static const String BLOG_CATEGORY_1 = "performance";
   static const String BLOG_CATEGORY_2 = "architecture";
@@ -282,7 +285,7 @@ class StringConst {
   static const String MAIL_ME = "Mail Me";
   static const String FOLLOW_ME_2 = "Follow Me";
   static const String FOLLOW_ME_2_URL = "behance.net/nimbus2000";
-  static const String RIGHTS_RESERVED = "© 2021 All rights reserved";
+  static const String RIGHTS_RESERVED = "© 2026 All rights reserved";
   static const String BUILT_BY = "Built with Flutter by";
   static const String ROHITASHWA_SINGH = "Rohitashwa Singh";
   static const String DESIGNED_BY = "Designed by";
@@ -304,14 +307,17 @@ class StringConst {
   static const String DAVID_LEGEND_URL = "https://davidcobbina.com/#/";
   static const String DESIGN_URL =
       "https://www.behance.net/gallery/95351691/Resume-Design-03";
+  // Served straight off the site (web/Rohitashwa_Singh_CV.pdf) rather than
+  // Google Drive — no sign-in wall, no share-permission surprises, and the
+  // file version is whatever was last deployed.
   static const String CV_LINK =
-      "https://drive.google.com/file/d/18L3Uhh9sSdVIeOHFfJpjOyOsIfZ8ahMK/view?usp=drive_link";
+      "https://www.rohitashwa.co.in/Rohitashwa_Singh_CV.pdf";
 
   // OZi Team Impact — home page brief
   static const String OZI_SECTION_LABEL = "team impact";
   static const String OZI_SECTION_TITLE = "What We Shipped at OZi";
   static const String OZI_SECTION_BODY =
-      "Dec 2025 – Present · Mobile Engineering Lead · Team of 5. Took OZi's mobile app from instability to 173K monthly active users and 1,000+ daily orders — while rebuilding the foundation and shipping features every sprint.";
+      "Dec 2025 – Jul 2026 · Mobile Engineering Lead · Team of 5. Took OZi's mobile app from instability to 173K monthly active users and 1,000+ daily orders — while rebuilding the foundation and shipping features every sprint.";
   static const String OZI_VIEW_CASE_STUDY = "View Full Case Study";
 
   // Metric cards (brief + detail page)
@@ -329,7 +335,7 @@ class StringConst {
   static const String OZI_DETAIL_SUBTITLE =
       "Quick Commerce – Engineering Impact";
   static const String OZI_DETAIL_ROLE = "Mobile Engineering Lead";
-  static const String OZI_DETAIL_PERIOD = "Dec 2025 – Present";
+  static const String OZI_DETAIL_PERIOD = "Dec 2025 – Jul 2026";
   static const String OZI_DETAIL_TEAM_SIZE = "Team of 5 Engineers";
   static const String OZI_DETAIL_PLATFORM = "Android · iOS · Flutter";
 
@@ -356,7 +362,7 @@ class StringConst {
   static const String OZI_BIZ_2_HEADLINE = "Daily orders up ~80% in 6 weeks";
   static const String OZI_BIZ_2_BODY =
       "Confirmed orders grew from ~550/day to 1,000+/day between April and May. Faster cold starts, fewer crashes at checkout, and features like Free Gifts and Scheduled Orders all contributed to more completed transactions.";
-  static const String OZI_BIZ_3_HEADLINE = "Rating improved: 4.2 → 4.8 stars";
+  static const String OZI_BIZ_3_HEADLINE = "Rating improved: 3.8 → 4.8 stars";
   static const String OZI_BIZ_3_BODY =
       "Play Store rating directly drives organic installs. Every crash we fixed and every second we shaved off launch time translated into users leaving better reviews — and fewer uninstalls after a bad first experience.";
   static const String OZI_BIZ_4_HEADLINE = "Team shipped without slowing down";
@@ -391,9 +397,9 @@ class StringConst {
   static const String PERFORMANCE_GROWTH_VAL = "173K MAU";
   static const String PERFORMANCE_GROWTH_CONTEXT = "6 weeks";
   static const String PERFORMANCE_RATING = "App Store Rating";
-  static const String PERFORMANCE_RATING_BEFORE = "4.2★";
+  static const String PERFORMANCE_RATING_BEFORE = "3.8★";
   static const String PERFORMANCE_RATING_AFTER = "4.8★";
-  static const String PERFORMANCE_RATING_IMPROVEMENT = "14% Increase";
+  static const String PERFORMANCE_RATING_IMPROVEMENT = "26% Increase";
 
   // Articles/Blog Section
   static const String ARTICLES = "articles";

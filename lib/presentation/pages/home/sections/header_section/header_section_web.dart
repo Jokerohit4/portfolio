@@ -160,6 +160,8 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisSize: MainAxisSize.min,
                           children: [
+                            AvailabilityBadge(),
+                            SpaceH16(),
                             ConstrainedBox(
                               constraints:
                                   BoxConstraints(maxWidth: screenWidth),

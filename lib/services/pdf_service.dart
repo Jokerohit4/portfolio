@@ -118,7 +118,7 @@ class PDFService {
             'Lead team of 5 mobile engineers delivering core consumer-facing features for quick-commerce platform serving 173K+ monthly active users',
             'Architected clean BLoC-based state management reducing memory leaks by 40% and improving app stability to 99.8% crash-free rate',
             'Optimized cold startup from 20-25s to 1.5s (94% improvement) through code splitting, lazy loading, and precise rebuilds',
-            'Increased app rating from 4.2★ to 4.8★ (14% improvement) through performance optimization and user experience enhancements',
+            'Increased app rating from 3.8★ to 4.8★ (26% improvement) through performance optimization and user experience enhancements',
             'Executed 1,237+ commits in 4 months, driving major architectural refactors and establishing stability frameworks',
             'Implemented comprehensive error tracking via Firebase Crashlytics for real-time crash monitoring across 173K+ users',
           ],

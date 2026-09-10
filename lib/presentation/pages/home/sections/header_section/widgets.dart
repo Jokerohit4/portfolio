@@ -190,3 +190,52 @@ double computeHeight(double offset, double sizeOfGlobe, double sizeOfBlob) {
     return sum + sizeOfBlob;
   }
 }
+
+/// A small "available for contract work" pill shown above the intro in the
+/// header. Uses a live green dot so it reads as a status, not a tagline.
+class AvailabilityBadge extends StatelessWidget {
+  const AvailabilityBadge({Key? key, this.fontSize = 13.0}) : super(key: key);
+
+  final double fontSize;
+
+  @override
+  Widget build(BuildContext context) {
+    final bool isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      decoration: BoxDecoration(
+        color: isDark
+            ? const Color(0xFF10331F).withValues(alpha: 0.85)
+            : const Color(0xFFECFDF5),
+        border: Border.all(
+          color: isDark ? const Color(0xFF1F6B45) : const Color(0xFFA7F3D0),
+        ),
+        borderRadius: BorderRadius.circular(100),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            width: 8,
+            height: 8,
+            decoration: const BoxDecoration(
+              color: Color(0xFF10B981),
+              shape: BoxShape.circle,
+            ),
+          ),
+          const SizedBox(width: 8),
+          Text(
+            StringConst.AVAILABILITY_BADGE,
+            style: TextStyle(
+              fontSize: fontSize,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 0.2,
+              color: isDark ? const Color(0xFF6EE7B7) : const Color(0xFF047857),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
