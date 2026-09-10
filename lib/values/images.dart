@@ -16,7 +16,6 @@ class ImagePath {
   static const String personalJammerz = "JAMMERZ_PERSONAL";
 
   // Logo
-  static const String LOGO_NAME = "$imageDir/rohitashwa_singh_logo.png";
   static const String LOGO = "$imageDir/logo.png";
 
   // Blobs
@@ -34,7 +33,6 @@ class ImagePath {
   // Dots Images
   static const String DOTS_GLOBE_GREY = "$imageDir/dots_globe_grey.png";
   static const String DOTS_GLOBE_YELLOW = "$imageDir/dots_globe_yellow.png";
-  static const String DOTS_GLOBE_YELLOW_2 = "$imageDir/dots_globe_yellow2.png";
 
   // Dev
   static const String DEV_ABOUT_ME = "$imageDir/dev_header.png";
@@ -43,9 +41,6 @@ class ImagePath {
   static const String FLAG = "$imageDir/indian-national-flag.jpg";
 
   // Blog Images
-  static const String BLOG_01 = "$imageDir/blog_01.jpg";
-  static const String BLOG_02 = "$imageDir/blog_02.jpg";
-  static const String BLOG_03 = "$imageDir/blog_03.jpg";
 
   // Portfolio Images
 

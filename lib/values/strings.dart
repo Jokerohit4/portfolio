@@ -6,34 +6,24 @@ class StringConst {
 
   //Nav Section
   static const String HOME = "Home";
-  static const String SERVICES = "Services";
   static const String ABOUT = "About";
   static const String PROJECTS = "Projects";
   static const String HOBBIES = "Hobbies";
   static const String AWARDS = "Awards";
-  static const String BLOG = "Blog";
   static const String SKILLS = "Skills";
-  static const String CONTACT = "Contacts";
 
   static const String CONTACT_ME = "Contact Me";
   static const String DEV_EMAIL = "me@rohitashwa.co.in";
-  static const String EMAIL_URL = "mailto:<$DEV_EMAIL>?subject=&body=";
+  static const String EMAIL_URL =
+      "mailto:$DEV_EMAIL?subject=Contract%20enquiry";
 
   //Header Section
   static const String FIRST_NAME = "Rohitashwa";
-  static const String LAST_NAME = "Singh";
   static const String INTRO = "Hi! I'm Rohitashwa Singh";
   static const String POSITION = "Mobile Engineering Lead";
   static const String AVAILABILITY_BADGE = "Available for contract work";
-  static const String ABOUT_ME_INTRO =
-      "I lead mobile engineering teams and build high-performance Flutter apps. Most recently Mobile Engineering Lead at OZi (quick-commerce), where I managed a team of 5 and drove the app from 3.8★ to 4.8★ with 99.8% crash-free sessions.";
-  static const String ABOUT_ME_DETAILS =
-      "Over 6 years, I’ve shipped production apps from zero to scale. At OZi I led a team of 5 to 99.8% crash-free sessions, a 4.8★ rating (up from 3.8★), and 1,237+ commits in 4 months. I now take on contract engagements while building my own platform end to end. I work independently and async—ideal for remote teams.";
   static const String ABOUT_DEV =
       "I fix mobile apps that crash, lag, or lose their store rating — and I can prove it. Six years across Flutter, Android and iOS, most recently leading a team of 5 on a quick-commerce app at 173K monthly actives. Available for remote contract work.";
-  static const String ABOUT_ME_1 = "I focus on one thing:";
-  static const String ABOUT_ME_2 =
-      "Building fast, scalable mobile apps that users love.";
   static const String DOWNLOAD_CV = "Download CV";
   static const String EMAIL = "Email";
   static const String DEV_EMAIL_2 = "me@rohitashwa.co.in";
@@ -49,27 +39,12 @@ class StringConst {
   static const String FREELANCER = "Remote-First";
   static const String FREELANCER_DESC = "Contract & fractional, remote";
 
-  static const String FLUTTER = "Flutter";
-  static const String JAVA = "Java";
-  static const String C_PLUS_PLUS = "C++";
-  static const String JAVASCRIPT = "Javascript";
-  static const String HTML = "HTML";
-  static const String CSS = "CSS";
-
   //AboutMe Section
   static const String HI = "Hi";
   static const String THERE = "There!";
   static const String ABOUT_ME = "about me";
   static const String ABOUT_ME_DESC =
       "Most recently Mobile Engineering Lead at OZi (quick-commerce), leading a team of 5. Before that I shipped production apps for WIOM (D2C internet), Real Solutions (ed-tech), Neodocs (health), and Gmagica. I optimize for latency, memory, and user retention. Currently available for remote contract work — performance rescue, Flutter delivery, and fractional mobile leadership.";
-  static const String ABOUT_ME_DESC_1 = "What I do:";
-  static const String ABOUT_ME_DESC_2 =
-      "I write production-grade Flutter code.";
-  static const String ABOUT_ME_DESC_3 =
-      "I debug performance at the architecture level.";
-  static const String ABOUT_ME_DESC_4 = "I ship solo or lead small teams.";
-  static const String ABOUT_ME_DESC_5 =
-      "I write clear documentation and communicate async.";
   static const String STARTUP = "Working on a new startup?";
   static const String HELP = "I can Help You!";
   static const String FOLLOW_ME_1 = "You can also follow me here:";
@@ -82,12 +57,6 @@ class StringConst {
   static const String SKILLS_TITLE_2 = "Really Good At";
   static const String SKILLS_DESC =
       "Six years of shipping production apps. I specialize in mobile performance, crash and stability work, offline-first architecture, and clean architecture at scale.";
-  static const String TOOLS_1_NAME = "Performance Optimization";
-  static const String TOOLS_1_PROFICIENCY = "Advanced";
-  static const String TOOLS_2_NAME = "Architecture & Design Patterns";
-  static const String TOOLS_2_PROFICIENCY = "Advanced";
-  static const String TOOLS_3_NAME = "Platform-Specific Code";
-  static const String TOOLS_3_PROFICIENCY = "Advanced";
   static const String SKILLS_1 = "Flutter";
   static const String SKILLS_1_DESC =
       "Shipped 5+ production apps. Familiar with all platforms: iOS, Android, Web, macOS.";
@@ -108,19 +77,14 @@ class StringConst {
 
   //Stats Section
   static const String HAPPY_CLIENTS = "Companies I've Worked With";
-  static const String HAPPY_CLIENTS_NUM = "6";
   static const String YEARS_OF_EXPERIENCE = "Years Shipping Production";
-  static const String YEARS_OF_EXPERIENCE_NUM = "6";
   static const String INCREDIBLE_PROJECTS = "Apps Built & Optimized";
-  static const String INCREDIBLE_PROJECTS_NUM = "13";
-  static const String AWARD_WINNING = "Passionate About Quality";
-  static const String AWARD_WINNING_NUM = "100%";
 
   //Projects Section
   static const String MEET_MY_PROJECTS = "Meet My Projects";
   static const String MY_WORKS = "my works";
   static const String PROJECTS_DESC =
-      "Mobile App Developer and Entrepreneur working in the industry for 05 years so far, specialized in product development, delivering the best possible solutions so far. These are the words we live by in everything we do.";
+      "Six years of production apps across quick commerce, D2C internet, health diagnostics, ed-tech and fintech — shipped to real users on Android and iOS, most of them solo or as the lead.";
   static const String ALL_PROJECTS = "All Projects";
   static const String ALL = "All";
   static const String WIOM = "Wiom";
@@ -128,10 +92,6 @@ class StringConst {
   static const String NEO_DOCS = "Neodocs";
   static const String GMAGICA = "Gmagica";
   static const String PERSONAL_PROJECTS = "Personal Projects";
-  static const String PHOTOGRAPHY = "Photography";
-  static const String WEB_DESIGN = "Web Design";
-  static const String PORTFOLIO_1_TITLE = "Urban Experience";
-  static const String PORTFOLIO_2_TITLE = "Graphic Design";
   static const String PARTNER_WIOM_V1 = "Wiom Partner V1";
   static const String PARTNER_WIOM_V1_LINK =
       "https://play.google.com/store/apps/details?id=com.i2e1.wiom.sales&hl=en_IN";
@@ -182,16 +142,9 @@ class StringConst {
 
   // Featured Project
   static const String PHOOL_GOBHI = "Phool Gobhi";
-  static const String PHOOL_GOBHI_SUBTITLE =
-      "Pay-Per-Session Fitness Platform";
-  static const String PHOOL_GOBHI_DESC =
-      "A pay-per-session gym booking platform, built end to end and running in production. Two Flutter apps (customer and partner), five Node/Express microservices behind an API gateway on GCP Cloud Run, three Next.js frontends. Wallet payments via Razorpay, JWT auth with rotating refresh tokens shared across web and mobile, signed QR check-in with geofencing, and a first-party analytics pipeline. Built solo.";
   static const String PHOOL_GOBHI_LINK = "https://www.phoolgobhi.com";
   static const String PHOOL_GOBHI_CUSTOMER_APP =
       "Phool Gobhi – Gym Session Booking";
-  static const String PORTFOLIO_4_TITLE = "3D Animation";
-  static const String PORTFOLIO_5_TITLE = "Collect Idea";
-  static const String PORTFOLIO_6_TITLE = "Company Branding";
 
   //HOBBIES & Section
   static const String MY_HOBBIES = "what drives me";
@@ -242,41 +195,13 @@ class StringConst {
       "Active open-source contributor (Flutter ecosystem)";
 
   //Brands Section
-  static const String BRANDS_SECTION_TITLE = "Brands I've worked with";
   static const String HIRE_ME = "Hire me";
-
-  //Testimonials Section
-  static const String MY_TESTIMONIALS = "what people say";
-  static const String TESTIMONIALS_SECTION_TITLE = "Real Feedback from Teams";
-  static const String TESTIMONIALS_1_NAME = "Coming Soon";
-  static const String TESTIMONIALS_1_POSITION =
-      "Will add verified testimonials here";
-  static const String TESTIMONIALS_1 =
-      "I collect real feedback from the teams I work with. Want to collaborate? Let's build something great together.";
-  static const String TESTIMONIALS_2_NAME = "Contact me";
-  static const String TESTIMONIALS_2_POSITION = "me@rohitashwa.co.in";
-  static const String TESTIMONIALS_2 =
+  static const String AVAILABILITY_NOTE =
       "Available for remote contract work — performance and crash rescue, Flutter delivery, or fractional mobile leadership. If your app is slow, crashing, or losing its rating, let's talk.";
 
+  //Testimonials Section
+
   //Blog Section
-  static const String MY_BLOG = "technical writing";
-  static const String BLOG_SECTION_TITLE_1 = "Performance & Architecture";
-  static const String BLOG_SECTION_TITLE_2 = "Articles Coming Soon";
-  static const String BLOG_DESC =
-      "I write about what I learn: Flutter performance optimization, mobile architecture patterns, and crash classification at scale.";
-  static const String BLOG_VIEW_ALL = "Subscribe";
-  static const String BLOG_CATEGORY_1 = "performance";
-  static const String BLOG_CATEGORY_2 = "architecture";
-  static const String BLOG_CATEGORY_3 = "flutter";
-  static const String BLOG_DATE = "Coming 2026";
-  static const String BLOG_TITLE_1 =
-      "Building a Custom Media Player in Flutter";
-  static const String BLOG_TITLE_2 =
-      "LRU Cache Implementation for Video Streaming";
-  static const String BLOG_TITLE_3 =
-      "Reducing App Startup Time: A Technical Breakdown";
-  static const String READ_MORE = "Follow";
-  static const String BLOGGING = "Technical Writing";
 
   //Footer Section
   static const String LETS_TALK = "Let's Talk!";
@@ -284,7 +209,6 @@ class StringConst {
   static const String PHONE_NUMBER = "+91 9354859197";
   static const String MAIL_ME = "Mail Me";
   static const String FOLLOW_ME_2 = "Follow Me";
-  static const String FOLLOW_ME_2_URL = "behance.net/nimbus2000";
   static const String RIGHTS_RESERVED = "© 2026 All rights reserved";
   static const String BUILT_BY = "Built with Flutter by";
   static const String ROHITASHWA_SINGH = "Rohitashwa Singh";
@@ -292,21 +216,14 @@ class StringConst {
   static const String WEB_GENIUS_LAB = "WebGeniusLab";
   static const String MADE_IN_INDIA = "Made in";
   static const String WITH_LOVE = "with";
-  static const String FIND_ME = "Find me on..";
 
   //URL Links
-  static const String WEB_GENIUS_LAB_URL = "https://webgeniuslab.net/";
-  static const String BEHANCE_URL = "https://www.behance.net/";
   static const String DRIBBLE_URL = "https://dribbble.com/";
   static const String LINKED_IN_URL =
       "https://www.linkedin.com/in/rohitashwa-singh-mobile-apps-flutter-android-ios/";
   static const String INSTAGRAM_URL = "https://www.instagram.com/";
   static const String GITHUB_URL = "https://github.com/Jokerohit4";
   static const String FACEBOOK_URL = "https://facebook.com/";
-  static const String TWITTER_URL = "http://twitter.com/";
-  static const String DAVID_LEGEND_URL = "https://davidcobbina.com/#/";
-  static const String DESIGN_URL =
-      "https://www.behance.net/gallery/95351691/Resume-Design-03";
   // Served straight off the site (web/Rohitashwa_Singh_CV.pdf) rather than
   // Google Drive — no sign-in wall, no share-permission surprises, and the
   // file version is whatever was last deployed.
@@ -406,6 +323,4 @@ class StringConst {
   static const String ARTICLES_TITLE = "Technical Writing";
   static const String ARTICLES_DESC =
       "Thoughts on mobile architecture, performance optimization, and team scaling.";
-  static const String ARTICLE_READ_MORE = "Read on Medium";
-  static const String ARTICLE_COMING_SOON = "Coming Soon";
 }

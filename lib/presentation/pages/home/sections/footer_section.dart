@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
 import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
@@ -74,9 +73,7 @@ class _FooterSectionState extends State<FooterSection> {
             },
           ),
           SpaceH20(),
-          InkWell(
-            onTap: () => openUrlLink(StringConst.WEB_GENIUS_LAB_URL, context),
-            child: RichText(
+          RichText(
               text: TextSpan(
                 text: StringConst.RIGHTS_RESERVED + " ",
                 style: footerTextStyle,
@@ -93,7 +90,6 @@ class _FooterSectionState extends State<FooterSection> {
               ),
               textAlign: TextAlign.center,
             ),
-          ),
           SpaceH4(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -153,25 +149,6 @@ class _FooterSectionState extends State<FooterSection> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              /*Tooltip(
-                message: 'Download CV',
-                child: InkWell(
-                  onTap: () => PDFService.generateAndDownloadCV(),
-                  child: Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppColors.primaryColor.withValues(alpha: 0.1),
-                    ),
-                    child: FaIcon(
-                      FontAwesomeIcons.filePdf,
-                      color: AppColors.primaryColor,
-                      size: Sizes.ICON_SIZE_20,
-                    ),
-                  ),
-                ),
-              ),
-              SpaceW20(),*/
               Tooltip(
                 message: 'GitHub Profile',
                 child: InkWell(
@@ -286,13 +263,25 @@ class _FooterSectionState extends State<FooterSection> {
                     style:
                         textTheme.titleLarge?.copyWith(color: AppColors.white),
                   ),
+                  SpaceH16(),
+                  ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: 620),
+                    child: Text(
+                      StringConst.AVAILABILITY_NOTE,
+                      textAlign: TextAlign.center,
+                      style: textTheme.bodyLarge?.copyWith(
+                        color: AppColors.white.withValues(alpha: 0.75),
+                        height: 1.6,
+                      ),
+                    ),
+                  ),
                   SpaceH60(),
                   ..._buildFooterItems(footerItems),
                   SpaceH60(),
-                  CvButton(
+                  NimBusButtonLink(
+                    url: StringConst.EMAIL_URL,
                     buttonTitle: StringConst.HIRE_ME,
                     buttonColor: AppColors.primaryColor,
-                    onPressed: () {},
                   ),
                   SpaceH80(),
                 ],
