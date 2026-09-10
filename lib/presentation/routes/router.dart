@@ -11,5 +11,10 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: HomeRoute.page, initial: true),
         // Its own URL so the case study can be sent to an investor directly.
         AutoRoute(page: PhoolGobhiRoute.page, path: '/phool-gobhi'),
+        // GitHub Pages redirects /phool-gobhi to /phool-gobhi/ because the
+        // route is served as a directory, so the app can be handed either form.
+        RedirectRoute(path: '/phool-gobhi/', redirectTo: '/phool-gobhi'),
+        // Never dead-end on an unknown path.
+        RedirectRoute(path: '*', redirectTo: '/'),
       ];
 }
