@@ -156,10 +156,17 @@ class _HomePageState extends State<HomePage>
                 children: [
                   Stack(
                     children: [
+                      // Theme-aware like the other blobs. The ash version is
+                      // near-white, so on the dark theme it washed out the
+                      // text sitting on top of it.
                       Positioned.fill(
                         child: Align(
                           alignment: Alignment.center,
-                          child: Image.asset(ImagePath.BLOB_BEAN_ASH),
+                          child: Image.asset(
+                            Theme.of(context).brightness == Brightness.dark
+                                ? ImagePath.BLOB_BLACK
+                                : ImagePath.BLOB_BEAN_ASH,
+                          ),
                         ),
                       ),
                       Column(

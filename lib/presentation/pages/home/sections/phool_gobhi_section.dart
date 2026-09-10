@@ -36,11 +36,20 @@ class PhoolGobhiSection extends StatelessWidget {
           final isMobile =
               sizing.screenSize.width < RefinedBreakpoints().tabletNormal;
 
+          // Opaque rather than translucent: a decorative blob sits behind this
+          // block in the page stack, and letting it show through washed out
+          // the text. Blend the tint over the scaffold colour instead.
+          final bool isDark = Theme.of(context).brightness == Brightness.dark;
+          final Color cardColor = Color.alphaBlend(
+            AppColors.primaryColor.withValues(alpha: 0.08),
+            isDark ? AppColors.black400 : AppColors.white,
+          );
+
           return Container(
             width: double.infinity,
             padding: EdgeInsets.all(isMobile ? 24 : 44),
             decoration: BoxDecoration(
-              color: AppColors.primaryColor.withValues(alpha: 0.08),
+              color: cardColor,
               border: Border.all(
                 color: AppColors.primaryColor.withValues(alpha: 0.45),
               ),
