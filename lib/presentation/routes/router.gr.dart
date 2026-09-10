@@ -7,36 +7,33 @@
 // ignore_for_file: type=lint
 // coverage:ignore-file
 
-// ignore_for_file: no_leading_underscores_for_library_prefixes
 part of 'router.dart';
 
-abstract class $AppRouter extends _i2.RootStackRouter {
-  $AppRouter({super.navigatorKey});
+abstract class _$AppRouter extends RootStackRouter {
+  // ignore: unused_element
+  _$AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i2.PageFactory> pagesMap = {
+  final Map<String, PageFactory> pagesMap = {
     HomeRoute.name: (routeData) {
-      return _i2.AutoRoutePage<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i1.HomePage(),
+        child: HomePage(),
       );
     },
-    ProjectDetailRoute.name: (routeData) {
-      final pathParams = routeData.inheritedPathParams;
-      return _i2.AutoRoutePage<dynamic>(
+    PhoolGobhiRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i3.ProjectDetailPage(
-          projectId: pathParams.getString('projectId'),
-        ),
+        child: const PhoolGobhiPage(),
       );
-    }
+    },
   };
 }
 
 /// generated route for
-/// [_i1.HomePage]
-class HomeRoute extends _i2.PageRouteInfo<void> {
-  const HomeRoute({List<_i2.PageRouteInfo>? children})
+/// [HomePage]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
       : super(
           HomeRoute.name,
           initialChildren: children,
@@ -44,33 +41,19 @@ class HomeRoute extends _i2.PageRouteInfo<void> {
 
   static const String name = 'HomeRoute';
 
-  static const _i2.PageInfo<void> page = _i2.PageInfo<void>(name);
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i3.ProjectDetailPage]
-class ProjectDetailRoute extends _i2.PageRouteInfo<ProjectDetailRouteArgs> {
-  ProjectDetailRoute({
-    required String projectId,
-    List<_i2.PageRouteInfo>? children,
-  }) : super(
-    ProjectDetailRoute.name,
-    args: ProjectDetailRouteArgs(projectId: projectId),
-    rawPathParams: {'projectId': projectId},
-    initialChildren: children,
-  );
+/// [PhoolGobhiPage]
+class PhoolGobhiRoute extends PageRouteInfo<void> {
+  const PhoolGobhiRoute({List<PageRouteInfo>? children})
+      : super(
+          PhoolGobhiRoute.name,
+          initialChildren: children,
+        );
 
-  static const String name = 'ProjectDetailRoute';
+  static const String name = 'PhoolGobhiRoute';
 
-  static const _i2.PageInfo<ProjectDetailRouteArgs> page =
-      _i2.PageInfo<ProjectDetailRouteArgs>(name);
-}
-
-class ProjectDetailRouteArgs {
-  const ProjectDetailRouteArgs({required this.projectId});
-
-  final String projectId;
-
-  @override
-  String toString() => 'ProjectDetailRouteArgs(projectId: $projectId)';
+  static const PageInfo<void> page = PageInfo<void>(name);
 }

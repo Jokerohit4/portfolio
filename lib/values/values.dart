@@ -18,5 +18,6 @@ part 'sizes.dart';
 part 'strings.dart';
 part 'styles.dart';
 part 'data.dart';
+part 'phool_gobhi_data.dart';
 part 'shadows.dart';
 part 'radius.dart';

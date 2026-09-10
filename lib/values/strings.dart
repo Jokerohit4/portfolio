@@ -10,12 +10,15 @@ class StringConst {
   static const String PROJECTS = "Projects";
   static const String HOBBIES = "Hobbies";
   static const String AWARDS = "Awards";
+  static const String PHOOL_GOBHI_NAV = "Phool Gobhi";
   static const String SKILLS = "Skills";
 
   static const String CONTACT_ME = "Contact Me";
   static const String DEV_EMAIL = "me@rohitashwa.co.in";
   static const String EMAIL_URL =
       "mailto:$DEV_EMAIL?subject=Contract%20enquiry";
+  static const String INVESTOR_EMAIL_URL =
+      "mailto:$DEV_EMAIL?subject=Phool%20Gobhi%20%E2%80%94%20investor%20enquiry";
 
   //Header Section
   static const String FIRST_NAME = "Rohitashwa";
@@ -23,7 +26,7 @@ class StringConst {
   static const String POSITION = "Mobile Engineering Lead";
   static const String AVAILABILITY_BADGE = "Available for contract work";
   static const String ABOUT_DEV =
-      "I fix mobile apps that crash, lag, or lose their store rating — and I can prove it. Six years across Flutter, Android and iOS, most recently leading a team of 5 on a quick-commerce app at 173K monthly actives. Available for remote contract work.";
+      "I fix mobile apps that crash, lag, or lose their store rating — and I can prove it. Six years across Flutter, Android and iOS, most recently leading a team of 5 on a quick-commerce app at 173K monthly actives. Currently building Phool Gobhi, a fitness ecosystem — apps, backend and web, end to end. Available for remote contract work.";
   static const String DOWNLOAD_CV = "Download CV";
   static const String EMAIL = "Email";
   static const String DEV_EMAIL_2 = "me@rohitashwa.co.in";

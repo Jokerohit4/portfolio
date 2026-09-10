@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:layout/layout.dart';
 import 'package:nimbus/presentation/routes/router.dart';
 import 'package:nimbus/values/values.dart';
@@ -6,6 +7,10 @@ import 'package:nimbus/values/values.dart';
 import 'app_theme.dart';
 
 void main() {
+  // Clean paths (/phool-gobhi) rather than /#/phool-gobhi, so the case
+  // study can be shared as a normal link. GitHub Pages needs a 404.html
+  // copy of index.html for this to survive a direct hit — see cd.yml.
+  usePathUrlStrategy();
   runApp(RohitashwaPortfolio());
 }
 

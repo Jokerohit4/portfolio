@@ -12,6 +12,7 @@ import 'package:nimbus/presentation/pages/home/sections/hobbies_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/nav_section/nav_section_mobile.dart';
 import 'package:nimbus/presentation/pages/home/sections/nav_section/nav_section_web.dart';
 import 'package:nimbus/presentation/pages/home/sections/ozi_section.dart';
+import 'package:nimbus/presentation/pages/home/sections/phool_gobhi_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/performance_metrics_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/projects_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/skills_section.dart';
@@ -48,6 +49,7 @@ class _HomePageState extends State<HomePage>
 
   final List<NavItemData> navItems = [
     NavItemData(name: StringConst.HOME, key: GlobalKey(), isSelected: true),
+    NavItemData(name: StringConst.PHOOL_GOBHI_NAV, key: GlobalKey()),
     NavItemData(name: StringConst.ABOUT, key: GlobalKey()),
     NavItemData(name: StringConst.SKILLS, key: GlobalKey()),
     NavItemData(name: StringConst.PROJECTS, key: GlobalKey()),
@@ -166,6 +168,11 @@ class _HomePageState extends State<HomePage>
                             key: navItems[0].key,
                           ),
                           SizedBox(height: spacerHeight),
+                          Container(
+                            key: navItems[1].key,
+                            child: PhoolGobhiSection(),
+                          ),
+                          SizedBox(height: spacerHeight),
                           VisibilityDetector(
                             key: Key("about"),
                             onVisibilityChanged: (visibilityInfo) {
@@ -176,7 +183,7 @@ class _HomePageState extends State<HomePage>
                               }
                             },
                             child: Container(
-                              key: navItems[1].key,
+                              key: navItems[2].key,
                               child: AboutMeSection(),
                             ),
                           ),
@@ -205,14 +212,14 @@ class _HomePageState extends State<HomePage>
                       Column(
                         children: [
                           Container(
-                            key: navItems[2].key,
+                            key: navItems[3].key,
                             child: SkillsSection(),
                           ),
                           SizedBox(height: spacerHeight),
                           StatisticsSection(),
                           SizedBox(height: spacerHeight),
                           Container(
-                            key: navItems[3].key,
+                            key: navItems[4].key,
                             child: ProjectsSection(),
                           ),
                           SizedBox(height: spacerHeight),
@@ -242,12 +249,12 @@ class _HomePageState extends State<HomePage>
                       Column(
                         children: [
                           Container(
-                            key: navItems[4].key,
+                            key: navItems[5].key,
                             child: HobbiesSection(),
                           ),
                           SpaceH40(),
                           Container(
-                            key: navItems[5].key,
+                            key: navItems[6].key,
                             child: AwardsSection(),
                           ),
                           SpaceH40(),

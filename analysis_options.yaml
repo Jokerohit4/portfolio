@@ -1,0 +1,8 @@
+analyzer:
+  # Generated sources are not hand-maintained, so their diagnostics should not
+  # gate CI. router.gr.dart in particular emits an unused-parameter warning that
+  # cannot be fixed without editing generated output.
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.gr.dart"
+    - "**/*.freezed.dart"

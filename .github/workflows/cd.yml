@@ -34,6 +34,11 @@ jobs:
       - name: Build Flutter web
         run: flutter build web
 
+      # GitHub Pages has no SPA rewrite. Serving index.html as the 404 page
+      # lets a direct hit on /phool-gobhi boot the app, which then routes.
+      - name: Add SPA fallback for deep links
+        run: cp build/web/index.html build/web/404.html
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
